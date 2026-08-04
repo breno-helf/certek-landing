@@ -90,10 +90,21 @@ def coletar(caminho: pathlib.Path) -> Coletor:
     return c
 
 
-def recursos(caminho: pathlib.Path) -> set[str]:
+def recursos(caminho: pathlib.Path) -> set[pathlib.Path]:
+    """Arquivos locais referenciados na página, já resolvidos no disco.
+
+    Os caminhos são relativos à própria página (para o site funcionar tanto na
+    raiz quanto numa subpasta do GitHub Pages), então a resolução parte do
+    diretório do arquivo HTML.
+    """
     html = caminho.read_text(encoding="utf-8")
-    achados = re.findall(r'(?:src|href)="(/[^"]+)"', html)
-    return {a for a in achados if not a.endswith("/")}
+    achados = re.findall(r'(?:src|href)="([^"#:]+)"', html)
+    saida = set()
+    for a in achados:
+        if a.endswith("/") or a.startswith(("#", "mailto:", "tel:")):
+            continue
+        saida.add((caminho.parent / a).resolve())
+    return saida
 
 
 def main() -> int:
@@ -147,8 +158,12 @@ def main() -> int:
     # 5. arquivos referenciados existem
     for nome, caminho in (("PT", PT), ("EN", EN)):
         for ref in sorted(recursos(caminho)):
-            if not (ROOT / ref.lstrip("/")).exists():
-                problemas.append(f"{nome}: arquivo não encontrado: {ref}")
+            if not ref.exists():
+                try:
+                    rotulo = ref.relative_to(ROOT)
+                except ValueError:
+                    rotulo = ref
+                problemas.append(f"{nome}: arquivo não encontrado: {rotulo}")
 
     chaves = len(set(pt_map) | set(en_map))
     if problemas:
