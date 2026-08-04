@@ -25,8 +25,13 @@ import sys
 from html.parser import HTMLParser
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-PT = ROOT / "index.html"
-EN = ROOT / "en/index.html"
+
+# Cada par é uma página em duas línguas. Acrescente aqui ao criar página nova —
+# é a única coisa que o checador precisa saber para passar a vigiá-la.
+PARES = [
+    ("home", ROOT / "index.html", ROOT / "en/index.html"),
+    ("trabalhe-conosco", ROOT / "trabalhe-conosco/index.html", ROOT / "en/careers/index.html"),
+]
 
 # Chaves cujo texto pode legitimamente ser idêntico nos dois idiomas
 # (nomes próprios, siglas, termos que não se traduzem).
@@ -42,6 +47,8 @@ IGUAIS_OK = {
     "segment.industrial.title",
     "works.sca.sector",
     "awards.press",
+    "careers.apply.emaillink",
+    "careers.apply.linkedin",
 }
 
 
@@ -108,13 +115,12 @@ def recursos(caminho: pathlib.Path) -> set[pathlib.Path]:
     return saida
 
 
-def main() -> int:
+def confere(rotulo: str, PT: pathlib.Path, EN: pathlib.Path) -> tuple[list[str], int, dict]:
     problemas: list[str] = []
 
     for p in (PT, EN):
         if not p.is_file():
-            print(f"não encontrei {p}", file=sys.stderr)
-            return 1
+            return ([f"{rotulo}: não encontrei {p}"], 0, {"client": 0, "work": 0})
 
     pt, en = coletar(PT), coletar(EN)
     pt_map, en_map = dict(pt.textos), dict(en.textos)
@@ -138,6 +144,7 @@ def main() -> int:
                 "works.status.done",
                 "works.status.live",
                 "awards.press",
+                "careers.cta2",
             }:
                 problemas.append(f"{nome}: chave repetida {n}x: {chave}")
 
@@ -150,10 +157,10 @@ def main() -> int:
             problemas.append(f"texto idêntico nos dois idiomas: {chave} -> {a[:60]!r}")
 
     # 4. contagens estruturais
-    for campo, rotulo in (("client", "logos de cliente"), ("work", "cards de obra")):
+    for campo, nome_campo in (("client", "logos de cliente"), ("work", "cards de obra")):
         if pt.contagens[campo] != en.contagens[campo]:
             problemas.append(
-                f"{rotulo}: PT tem {pt.contagens[campo]}, EN tem {en.contagens[campo]}"
+                f"{nome_campo}: PT tem {pt.contagens[campo]}, EN tem {en.contagens[campo]}"
             )
 
     # 5. JSON-LD: válido nos dois, e a MESMA entidade dos dois lados.
@@ -194,17 +201,28 @@ def main() -> int:
                 problemas.append(f"{nome}: arquivo não encontrado: {rotulo}")
 
     chaves = len(set(pt_map) | set(en_map))
-    if problemas:
-        print(f"{len(problemas)} divergência(s):\n")
-        for p in problemas:
+    return ([f"{rotulo}: {p}" for p in problemas], chaves, pt.contagens)
+
+
+def main() -> int:
+    todos: list[str] = []
+    linhas: list[str] = []
+    for rotulo, pt_path, en_path in PARES:
+        problemas, chaves, cont = confere(rotulo, pt_path, en_path)
+        todos.extend(problemas)
+        linhas.append(
+            f"  {rotulo:<20} {chaves:>3} chaves"
+            + (f", {cont['client']} logos, {cont['work']} obras" if cont["client"] else "")
+        )
+
+    if todos:
+        print(f"{len(todos)} divergência(s):\n")
+        for p in todos:
             print(f"  - {p}")
         return 1
 
-    print(
-        f"OK — {chaves} chaves sincronizadas, "
-        f"{pt.contagens['client']} logos, {pt.contagens['work']} obras, "
-        "todos os arquivos referenciados existem."
-    )
+    print(f"OK — {len(PARES)} páginas em PT/EN sincronizadas:")
+    print("\n".join(linhas))
     return 0
 
 

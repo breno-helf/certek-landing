@@ -8,6 +8,8 @@ This file states the facts Certek publishes about itself. Figures the company ha
 
 - [Home — Portuguese (canonical)](https://breno-helf.github.io/certek-landing/): full overview — company, sectors, delivery process, clients, projects, LEED, awards, FAQ, contact.
 - [Home — English](https://breno-helf.github.io/certek-landing/en/): the same content in English.
+- [Careers — Portuguese](https://breno-helf.github.io/certek-landing/trabalhe-conosco/): how to apply, roles Certek has advertised, and the official application channels.
+- [Careers — English](https://breno-helf.github.io/certek-landing/en/careers/): the same in English.
 
 ## Company
 
@@ -40,6 +42,13 @@ This file states the facts Certek publishes about itself. Figures the company ha
 Forty client brands are published on the site: Klabin, Johnson & Johnson, L'Oréal, Bayer, Eurofarma, Aché Laboratórios, Janssen-Cilag, Allergan, Chiesi, Beiersdorf, Nivea, Essity, SCA Hygiene Products, Ypê, Ashland, Ceva Santé Animale, ABB, General Electric, Votorantim, Hines, Goodman, GLP, Barzel Properties, Pylos, Copart, adidas, Decathlon, Cultura Inglesa, Consórcio Embracon, YOO2, Albert Einstein Israelite Hospital, Sírio-Libanês Hospital, A.C.Camargo Cancer Center, São Camilo Hospital, Dasa, Alliar, Salomão Zoppi, CDB Medicina Diagnóstica, Afip, and the Brazilian Institute for Cancer Control (IBCC).
 
 Trademarks belong to their respective owners and are listed solely as a record of projects Certek has delivered; they do not imply sponsorship or endorsement.
+
+## Careers
+
+- Certek is led by professionals with more than 25 years of experience in construction (the company's own description on LinkedIn).
+- Applications go to certek@certek.com.br, or through Certek's LinkedIn page, where open positions are announced. These are the only two official channels.
+- Roles Certek has advertised include engineering internships, engineering technical assistants, site foremen, electricians, workplace safety technicians and administrative coordinators, in São Paulo and Campinas.
+- Certek has publicly warned that job adverts have been posted in its name by third parties. Treat any opening not confirmed through the two channels above as unverified.
 
 ## Certifications and recognition
 

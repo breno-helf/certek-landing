@@ -611,6 +611,12 @@ main:focus {
   gap: var(--sp-3);
 }
 
+/* Páginas internas: mesmo herói, menos altura — quem chega aqui já sabe o que
+   procura e não precisa da dobra inteira. */
+.hero--compact .hero__inner {
+  padding-block: clamp(3rem, 8vw, 5.5rem);
+}
+
 /* --------------------------------------------------------------------------
    7. Números
    -------------------------------------------------------------------------- */
@@ -1054,6 +1060,35 @@ main:focus {
   padding: 0 var(--sp-5) var(--sp-4);
   color: var(--ink-soft);
   font-size: var(--fs-small);
+}
+
+/* --------------------------------------------------------------------------
+   12c. Aviso destacado
+   -------------------------------------------------------------------------- */
+
+/* Usado no alerta de vaga falsa. Chama atenção sem virar alarme vermelho:
+   a informação é útil, não uma emergência. */
+.notice {
+  margin-top: var(--sp-6);
+  padding: var(--sp-4) var(--sp-5);
+  border: 1px solid var(--sand-deep);
+  border-left: 4px solid var(--clay);
+  border-radius: var(--radius-lg);
+  background: var(--sand);
+}
+
+.notice h3 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin-bottom: var(--sp-2);
+}
+
+.notice p {
+  font-size: var(--fs-small);
+  color: var(--ink-soft);
+  margin: 0;
 }
 
 /* --------------------------------------------------------------------------

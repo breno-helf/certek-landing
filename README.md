@@ -32,6 +32,8 @@ favicon, sem dados estruturados, e todo o conteúdo preso a um CMS de terceiros.
 ```
 index.html              página em português (canônica em /)
 en/index.html           página em inglês (/en/)
+trabalhe-conosco/       página de carreiras em português
+en/careers/             página de carreiras em inglês
 assets/
   css/site.css          folha única — tokens, componentes, responsivo
   css/fonts.css         @font-face gerado (não editar à mão)
@@ -88,6 +90,10 @@ A mitigação é `scripts/check-i18n.py`. Cada nó traduzível carrega um atribu
 
 O que ele ainda **não** vigia, e você precisa conferir à mão: o conteúdo dos
 `alt` (também é texto bilíngue) e o que está dentro de `<noscript>`.
+
+Ele cobre **todos os pares de página** listados em `PARES`, no topo do script.
+Ao criar uma página nova, acrescente o par ali — é a única coisa que ele precisa
+saber para passar a vigiá-la.
 
 **Rode antes de cada commit.** Se um dia a página virar várias, aí vale migrar
 para algo com componentes (Astro resolve bem); para uma página só, um checador
