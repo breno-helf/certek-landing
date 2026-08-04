@@ -146,10 +146,13 @@ não publicada: a página fala pela matriz.
 ## Regras que a página segue
 
 - **Nada inventado.** Não há headcount, m² construídos nem faturamento. Os
-  quatro números da seção "Números" ou são contáveis a partir do material
-  público — 40 logos exibidos → "40 clientes"; 6 segmentos; 2 obras em
-  andamento (Hines e Yamaha) — ou foram informados pela Certek
-  (fundação em 2012).
+  quatro tiles da seção "Números" são: **2012** (fundação, confirmada pela
+  Certek e pelo registro público), **40** (contável — são 40 logos exibidos),
+  **6** (contável — são 6 segmentos com card próprio) e **LEED** (afirmação já
+  publicada, sem número). O tile "obras em andamento" foi retirado por ser o
+  único que envelhecia sozinho em dois arquivos sem data na página.
+  O LinkedIn da Certek declara 51–200 funcionários; a regra de não publicar
+  headcount vale mesmo assim, inclusive na página de carreiras.
 - **Zero dado financeiro.** Os números do ERP Sienge que existem em
   `../certek-streamlit/` são internos e não aparecem aqui.
 - **Só clientes já públicos.** Todos os 40 logos vêm das tiras que a própria
