@@ -443,6 +443,27 @@ ol {
   color: #fff;
 }
 
+.social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius);
+  color: var(--ink-faint);
+  transition: color 0.15s var(--ease), background-color 0.15s var(--ease);
+}
+
+.social svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.social:hover {
+  color: var(--wine);
+  background: var(--sand);
+}
+
 .nav-toggle {
   display: none;
   width: 2.75rem;
@@ -711,23 +732,24 @@ ol {
    9. Clientes
    -------------------------------------------------------------------------- */
 
+/* São 42 logos. Com células grandes a seção viraria uma parede de 1.000 px,
+   então o mosaico é denso de propósito: ~9 colunas no desktop, 5 linhas. */
+/* Sem linhas de grade: 42 logos nunca fecham a última linha exatamente, e o
+   truque de gap com fundo colorido deixava um bloco cinza vazio no fim. Sem as
+   linhas, a linha incompleta simplesmente não aparece. */
 .clients__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+  grid-template-columns: repeat(auto-fill, minmax(126px, 1fr));
+  gap: var(--sp-1);
 }
 
 .client {
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 16 / 9;
-  padding: var(--sp-4);
-  background: var(--paper);
+  aspect-ratio: 5 / 3;
+  padding: var(--sp-3);
+  border-radius: var(--radius);
   transition: background-color 0.2s var(--ease);
 }
 
@@ -1246,6 +1268,30 @@ ol {
     background: var(--paper);
     border-bottom: 1px solid var(--line);
     box-shadow: var(--shadow-card);
+    /* menu aberto num aparelho baixo (ou na horizontal) não pode passar da
+       tela sem forma de alcançar o resto */
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  /* header mais baixo devolve altura útil numa tela pequena */
+  .site-header__inner {
+    min-height: 3.75rem;
+  }
+
+  html {
+    scroll-padding-top: 4.5rem;
+  }
+
+  /* alvos de toque: 44px é o mínimo confortável com o dedo */
+  .lang__item {
+    padding: 0.7rem 1rem;
+  }
+
+  .social {
+    width: 2.75rem;
+    height: 2.75rem;
   }
 
   .nav[hidden] {
@@ -1304,8 +1350,14 @@ ol {
     border-left: 0;
   }
 
+  /* Blocos de texto ficam em 1 coluna (acima), mas o mosaico de logos não é
+     texto — em 2 colunas ele viraria 21 linhas de rolagem. */
   .clients__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .client {
+    padding: var(--sp-2);
   }
 
   .site-footer__top {
@@ -1316,6 +1368,15 @@ ol {
   .hero__actions .btn,
   .cta-band__actions .btn {
     width: 100%;
+  }
+}
+
+/* Só nas telas realmente minúsculas o mosaico cai para 2 colunas. O corte fica
+   em 340px de propósito: 375px (iPhone SE/mini) é largura comum demais para
+   receber o layout de exceção — em 2 colunas os 42 logos viram 21 linhas. */
+@media (max-width: 340px) {
+  .clients__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

@@ -91,26 +91,25 @@ de 150 linhas custa menos que um toolchain.
       Enquanto estiver assim, o `site.js` intercepta o envio e abre um e-mail já
       preenchido — nunca finge que enviou. Para ativar: crie um formulário no
       Formspree (ou use Netlify Forms) e troque o `action` **nos dois arquivos**.
-- [ ] **URL do LinkedIn.** O site atual tem o ícone no header, mas o link não
-      está no HTML estático. Falta pegar a URL e adicionar ao rodapé e ao
-      `sameAs` do JSON-LD.
 - [ ] **Foto do Hines — 740 Anastácio.** É a obra premiada em 2014, e a imagem
       não é mais recuperável do CDN (o bucket `688fe0a0…` responde 403). Se a
       Certek tiver o original, a seção de reconhecimento ganha muito.
-- [ ] **Ano de fundação.** Deliberadamente não inventado. A única âncora
-      temporal verificada é o prêmio de 2014. Se a Certek informar o ano, dá
-      para trocar um dos tiles de "Números" por "desde 19XX".
 - [ ] **Domínio.** As tags canônicas assumem `https://certek.com.br`. Se o
       primeiro deploy for em outro domínio, é um find-and-replace.
+
+Resolvidos: LinkedIn (`linkedin.com/company/certek-construtora`, no header, no
+rodapé e no `sameAs` do JSON-LD) e ano de fundação (2012, no tile de "Números",
+no texto de "Quem somos" e no `foundingDate` do JSON-LD).
 
 ---
 
 ## Regras que a página segue
 
-- **Nada inventado.** Não há ano de fundação, headcount, m² construídos nem
-  faturamento. Os quatro números da seção "Números" são contáveis a partir do
-  material público: 42 logos exibidos → "40+ clientes"; 6 segmentos; 3 obras em
-  andamento (Clara Resorts, Hines, Yamaha); prêmio de 2014.
+- **Nada inventado.** Não há headcount, m² construídos nem faturamento. Os
+  quatro números da seção "Números" ou são contáveis a partir do material
+  público — 42 logos exibidos → "40+ clientes"; 6 segmentos; 3 obras em
+  andamento (Clara Resorts, Hines, Yamaha) — ou foram informados pela Certek
+  (fundação em 2012).
 - **Zero dado financeiro.** Os números do ERP Sienge que existem em
   `../certek-streamlit/` são internos e não aparecem aqui.
 - **Só clientes já públicos.** Todos os 42 logos vêm das tiras que a própria
