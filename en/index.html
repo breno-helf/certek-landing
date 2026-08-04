@@ -4,25 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Certek Construtora — Industrial, Logistics, Healthcare and Commercial Construction in São Paulo</title>
-<meta name="description" content="Brazilian general contractor working across industrial, commercial, logistics, residential, healthcare and institutional sectors. From detailed design to turnkey handover, with LEED-certified projects.">
+<title>Industrial, Logistics &amp; Healthcare Contractor in São Paulo | Certek</title>
+<meta name="description" content="Brazilian general contractor in São Paulo since 2012: industrial, logistics, healthcare and commercial projects, design to turnkey, LEED certified.">
 
-<link rel="canonical" href="https://certek.com.br/en/">
-<link rel="alternate" hreflang="pt-BR" href="https://certek.com.br/">
-<link rel="alternate" hreflang="en" href="https://certek.com.br/en/">
-<link rel="alternate" hreflang="x-default" href="https://certek.com.br/">
+<link rel="canonical" href="https://breno-helf.github.io/certek-landing/en/">
+<link rel="alternate" hreflang="pt-BR" href="https://breno-helf.github.io/certek-landing/">
+<link rel="alternate" hreflang="en" href="https://breno-helf.github.io/certek-landing/en/">
+<link rel="alternate" hreflang="x-default" href="https://breno-helf.github.io/certek-landing/">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Certek Construtora">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="pt_BR">
-<meta property="og:url" content="https://certek.com.br/en/">
-<meta property="og:title" content="Certek Construtora — more than buildings">
+<meta property="og:url" content="https://breno-helf.github.io/certek-landing/en/">
+<meta property="og:title" content="Certek Construtora — More than buildings">
 <meta property="og:description" content="From detailed design to turnkey handover. Industrial, logistics, healthcare and commercial projects for Klabin, Eurofarma, Johnson &amp; Johnson, Hines, Albert Einstein and others.">
-<meta property="og:image" content="https://certek.com.br/assets/img/og-certek.jpg">
+<meta property="og:image" content="https://breno-helf.github.io/certek-landing/assets/img/og-certek.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Certek Construtora">
+<meta property="og:image:alt" content="Certek Construtora — industrial, logistics and healthcare construction in São Paulo">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" type="image/png">
@@ -31,40 +31,184 @@
 <meta name="theme-color" content="#600a0a">
 
 <link rel="preload" href="../assets/fonts/gentium-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../assets/fonts/inter-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<!-- hero image: lives in a background-image (site.css, .hero__media), which the
+     preload scanner cannot see. If it changes there, change it here too. -->
+<link rel="preload" as="image" href="../assets/img/obras/clara-resorts-1.jpg" fetchpriority="high">
 <link rel="stylesheet" href="../assets/css/fonts.css">
 <link rel="stylesheet" href="../assets/css/site.css">
 
+<noscript><style>
+@media (max-width: 900px) {
+  .nav[hidden] { display: flex; position: static; box-shadow: none; padding-inline: 0; }
+  .nav-toggle { display: none; }
+}
+</style></noscript>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "GeneralContractor",
-  "name": "Certek Construtora",
-  "legalName": "Certek Construtora Ltda",
-  "url": "https://certek.com.br/en/",
-  "logo": "https://certek.com.br/assets/img/logo-certek.png",
-  "image": "https://certek.com.br/assets/img/og-certek.jpg",
-  "email": "certek@certek.com.br",
-  "telephone": "+55-11-94785-4844",
-  "foundingDate": "2012",
-  "sameAs": ["https://www.linkedin.com/company/certek-construtora/"],
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "R. Dr. Renato Paes de Barros, 618 - sala 37",
-    "addressLocality": "São Paulo",
-    "addressRegion": "SP",
-    "postalCode": "04530-000",
-    "addressCountry": "BR"
-  },
-  "areaServed": { "@type": "Country", "name": "Brazil" },
-  "knowsAbout": [
-    "Industrial construction",
-    "Logistics construction",
-    "Healthcare construction",
-    "Commercial construction",
-    "Retrofit",
-    "Turnkey delivery",
-    "LEED certification"
+  "@graph": [
+    {
+      "@type": [
+        "GeneralContractor",
+        "Organization"
+      ],
+      "@id": "https://breno-helf.github.io/certek-landing/#org",
+      "name": "Certek Construtora",
+      "legalName": "Certek Construtora Ltda",
+      "url": "https://breno-helf.github.io/certek-landing/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://breno-helf.github.io/certek-landing/#logo",
+        "url": "https://breno-helf.github.io/certek-landing/assets/img/logo-certek.png",
+        "width": 288,
+        "height": 147
+      },
+      "image": {
+        "@id": "https://breno-helf.github.io/certek-landing/#logo"
+      },
+      "email": "certek@certek.com.br",
+      "telephone": "+55-11-94785-4844",
+      "foundingDate": "2012",
+      "sameAs": [
+        "https://www.linkedin.com/company/certek-construtora/"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Dr. Renato Paes de Barros, 618 - sala 37",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "postalCode": "04530-000",
+        "addressCountry": "BR"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "certek@certek.com.br",
+          "telephone": "+55-11-94785-4844",
+          "availableLanguage": [
+            "pt-BR",
+            "en"
+          ]
+        }
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Brazil"
+      },
+      "award": "20º Prêmio Master Imobiliário (2014) — Empreendimento Retrofit",
+      "knowsAbout": [
+        "Industrial construction",
+        "Commercial construction",
+        "Logistics construction",
+        "Residential construction",
+        "Healthcare construction",
+        "Institutional construction",
+        "Retrofit",
+        "Turnkey delivery",
+        "LEED-certified construction"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Certek Construtora — general contractor in São Paulo",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Industrial construction"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Commercial construction"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Logistics construction"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Residential construction"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Healthcare construction"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Institutional construction"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Retrofit"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Turnkey delivery"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "LEED-certified construction"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://breno-helf.github.io/certek-landing/#site",
+      "url": "https://breno-helf.github.io/certek-landing/",
+      "name": "Certek Construtora",
+      "publisher": {
+        "@id": "https://breno-helf.github.io/certek-landing/#org"
+      },
+      "inLanguage": [
+        "pt-BR",
+        "en"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://breno-helf.github.io/certek-landing/en/#page",
+      "url": "https://breno-helf.github.io/certek-landing/en/",
+      "name": "Certek Construtora — general contractor in São Paulo",
+      "description": "Brazilian general contractor in São Paulo since 2012: industrial, logistics, healthcare and commercial projects, design to turnkey, LEED certified.",
+      "isPartOf": {
+        "@id": "https://breno-helf.github.io/certek-landing/#site"
+      },
+      "about": {
+        "@id": "https://breno-helf.github.io/certek-landing/#org"
+      },
+      "inLanguage": "en",
+      "primaryImageOfPage": {
+        "@id": "https://breno-helf.github.io/certek-landing/#logo"
+      }
+    }
   ]
 }
 </script>
@@ -76,15 +220,17 @@
 <header class="site-header">
   <div class="container site-header__inner">
     <a class="brand" href="./" aria-label="Certek Construtora — home">
-      <img src="../assets/img/logo-certek.png" alt="Certek Construtora" width="600" height="307">
+      <img src="../assets/img/logo-certek.png" alt="Certek Construtora" width="288" height="147">
     </a>
+
+    <a class="btn btn--primary site-header__cta" href="#contato" data-i18n="nav.cta">Talk to us</a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">
       <span></span>
       <span class="visually-hidden" data-i18n="nav.toggle">Open menu</span>
     </button>
 
-    <nav class="nav" id="nav" aria-label="Main">
+    <nav class="nav" id="nav" hidden aria-label="Main">
       <ul class="nav__list">
         <li><a class="nav__link" href="#empresa" data-i18n="nav.about">About us</a></li>
         <li><a class="nav__link" href="#servicos" data-i18n="nav.services">What we do</a></li>
@@ -95,7 +241,7 @@
       <div class="nav__aside">
         <div class="lang">
           <a class="lang__item" href="../" lang="pt-BR" hreflang="pt-BR">PT</a>
-          <a class="lang__item" href="./" aria-current="true" lang="en" hreflang="en">EN</a>
+          <a class="lang__item" href="./" aria-current="page" lang="en" hreflang="en">EN</a>
         </div>
         <a class="social" href="https://www.linkedin.com/company/certek-construtora/" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
@@ -106,22 +252,24 @@
   </div>
 </header>
 
-<main id="main">
+<main id="main" tabindex="-1">
 
   <!-- 1 · Hero ------------------------------------------------------------- -->
   <section class="hero">
     <div class="hero__media" role="presentation"></div>
     <div class="container">
       <div class="hero__inner">
-        <p class="hero__eyebrow" data-i18n="hero.eyebrow">General contractor · São Paulo</p>
-        <h1 class="hero__title" data-i18n="hero.title">More than buildings.</h1>
+        <h1 class="hero__title">
+          <span class="hero__eyebrow" data-i18n="hero.eyebrow">Industrial, logistics &amp; healthcare contractor · São Paulo</span>
+          <span data-i18n="hero.title">More than buildings.</span>
+        </h1>
         <p class="hero__lead" data-i18n="hero.lead">
-          What we deliver is trust, built with purpose — from detailed design to
-          the handover of the keys.
+          We deliver trust, built with purpose — from detailed design to turnkey
+          handover.
         </p>
         <div class="hero__actions">
           <a class="btn btn--light" href="#contato" data-i18n="hero.cta1">Talk to us</a>
-          <a class="btn btn--on-dark" href="#obras" data-i18n="hero.cta2">See our work</a>
+          <a class="btn btn--on-dark" href="#obras" data-i18n="hero.cta2">See our projects</a>
         </div>
       </div>
     </div>
@@ -133,7 +281,7 @@
       <div class="stats__grid">
         <div class="stat">
           <span class="stat__value">2012</span>
-          <span class="stat__label" data-i18n="stats.since">building since</span>
+          <span class="stat__label" data-i18n="stats.since">founded</span>
         </div>
         <div class="stat">
           <span class="stat__value">40</span>
@@ -144,8 +292,8 @@
           <span class="stat__label" data-i18n="stats.sectors">sectors we build in</span>
         </div>
         <div class="stat">
-          <span class="stat__value">2</span>
-          <span class="stat__label" data-i18n="stats.ongoing">projects under way</span>
+          <span class="stat__value">LEED</span>
+          <span class="stat__label" data-i18n="stats.leed">certified projects</span>
         </div>
       </div>
     </div>
@@ -158,23 +306,26 @@
         <p class="section__eyebrow" data-i18n="about.eyebrow">About us</p>
         <h2 class="section__title" data-i18n="about.title">Excellence that builds trust</h2>
         <p class="section__lead" data-i18n="about.lead">
-          Building since 2012, we are a company with solid experience that
-          combines dynamism and innovation with the expertise of highly
-          qualified professionals.
+          Certek Construtora Ltda is a Brazilian general contractor founded in
+          2012 and headquartered in Itaim Bibi, São Paulo (SP). It delivers
+          industrial, commercial, logistics, residential, healthcare and
+          institutional projects on a turnkey basis — from detailed design to
+          handover — including projects certified under the U.S. Green Building
+          Council's LEED rating system.
         </p>
       </div>
 
       <div class="grid grid--2">
         <p data-reveal data-i18n="about.p1">
-          Working across the industrial, logistics, commercial, healthcare and
-          residential sectors, we offer complete construction solutions grounded
+          Working across the industrial, logistics, commercial, healthcare,
+          residential and institutional sectors, we offer complete construction solutions grounded
           in excellence, safety and sustainability, with a rigorous commitment to
           schedule and cost and full transparency at every stage.
         </p>
         <p data-reveal data-i18n="about.p2">
-          That is why, beyond raising solid structures, we set out to build
-          lasting relationships with our clients — relationships based on
-          transparency, efficiency and delivery to a high standard of quality.
+          Beyond putting up solid structures, we build lasting client
+          relationships — grounded in transparency, efficiency and consistently
+          high-quality delivery.
         </p>
       </div>
     </div>
@@ -187,11 +338,10 @@
         <p class="section__eyebrow" data-i18n="services.eyebrow">What we do</p>
         <h2 class="section__title" data-i18n="services.title">From detailed design to turnkey</h2>
         <p class="section__lead" data-i18n="services.lead">
-          We carry out construction works through every phase, from detailed
-          design development to strategic planning and full budgeting, all the
-          way to turnkey handover. We coordinate multidisciplinary teams and
-          manage subcontractors, keeping tight control of cost, schedule and
-          quality.
+          We deliver construction projects at every phase: detailed design,
+          strategic planning and full cost estimating, through to turnkey
+          handover. We coordinate multidisciplinary teams and manage
+          subcontractors, holding tight control of cost, schedule and quality.
         </p>
       </div>
 
@@ -202,10 +352,10 @@
         </li>
         <li class="process__step" data-reveal>
           <h3 data-i18n="process.2.title">Planning and budget</h3>
-          <p data-i18n="process.2.text">Strategic planning and complete budgeting before the first excavation.</p>
+          <p data-i18n="process.2.text">Schedule and full cost plan closed before the first excavation.</p>
         </li>
         <li class="process__step" data-reveal>
-          <h3 data-i18n="process.3.title">Delivery and management</h3>
+          <h3 data-i18n="process.3.title">Construction and site management</h3>
           <p data-i18n="process.3.text">Coordination of multidisciplinary teams and management of subcontractors.</p>
         </li>
         <li class="process__step" data-reveal>
@@ -220,7 +370,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V9l6-4v16M10 21V11l6-3v13M16 21v-8l4-2v10"/><path d="M7 12h.01M7 16h.01M13 14h.01M13 18h.01"/></svg>
           </div>
           <h3 data-i18n="segment.industrial.title">Industrial</h3>
-          <p data-i18n="segment.industrial.text">Manufacturing plants, expansions and retrofits for chemical, pharmaceutical and pulp and paper industries.</p>
+          <p data-i18n="segment.industrial.text">Manufacturing plants, expansions and retrofits for the chemical, pharmaceutical and pulp-and-paper industries.</p>
         </article>
 
         <article class="segment" data-reveal>
@@ -228,7 +378,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/><path d="M9 10h.01M15 10h.01"/></svg>
           </div>
           <h3 data-i18n="segment.comercial.title">Commercial</h3>
-          <p data-i18n="segment.comercial.text">Stores, offices and retail centres, including works carried out in live environments.</p>
+          <p data-i18n="segment.comercial.text">Stores, offices and retail centers, built without shutting the operation down.</p>
         </article>
 
         <article class="segment" data-reveal>
@@ -236,7 +386,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17h20M3 17V9l9-5 9 5v8"/><path d="M8 17v-5h8v5"/><path d="M12 4v8"/></svg>
           </div>
           <h3 data-i18n="segment.logistica.title">Logistics</h3>
-          <p data-i18n="segment.logistica.text">Warehouses, distribution centres and terminals for logistics operators.</p>
+          <p data-i18n="segment.logistica.text">Warehouses, distribution centers and terminals for logistics operators.</p>
         </article>
 
         <article class="segment" data-reveal>
@@ -252,7 +402,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V5h14v16"/><path d="M12 8v6M9 11h6"/></svg>
           </div>
           <h3 data-i18n="segment.hospitalar.title">Healthcare</h3>
-          <p data-i18n="segment.hospitalar.text">Hospitals, diagnostic centres and laboratories, built in critical environments.</p>
+          <p data-i18n="segment.hospitalar.text">Hospitals, diagnostic centers and laboratories, built in critical environments.</p>
         </article>
 
         <article class="segment" data-reveal>
@@ -260,7 +410,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V10l8-6 8 6v11"/><path d="M4 10h16"/><path d="M10 21v-6h4v6"/></svg>
           </div>
           <h3 data-i18n="segment.institucional.title">Institutional</h3>
-          <p data-i18n="segment.institucional.text">Schools, non-profits and institutional buildings, including accessibility works and refurbishment.</p>
+          <p data-i18n="segment.institucional.text">Schools, non-profit facilities and institutional buildings, including accessibility upgrades and refurbishment.</p>
         </article>
       </div>
     </div>
@@ -273,57 +423,60 @@
         <p class="section__eyebrow" data-i18n="clients.eyebrow">Clients</p>
         <h2 class="section__title" data-i18n="clients.title">Who builds with Certek</h2>
         <p class="section__lead" data-i18n="clients.lead">
-          Manufacturing, pharmaceuticals, logistics, retail and healthcare —
-          companies that come back to us for the next project.
+          Manufacturing, pharmaceuticals, logistics, retail and healthcare — 40
+          brands served since 2012.
         </p>
       </div>
 
+      <p class="clients__roster" data-i18n="clients.roster">Clients served include: Klabin, Johnson &amp; Johnson, L'Oréal, Bayer, Eurofarma, Aché Laboratórios, Janssen-Cilag, Allergan, Chiesi, Beiersdorf, Nivea, Essity, SCA Hygiene Products, Ypê, Ashland, Ceva Santé Animale, ABB, General Electric, Votorantim, Hines, Goodman, GLP, Barzel Properties, Pylos, Copart, adidas, Decathlon, Cultura Inglesa, Consórcio Embracon, YOO2, Albert Einstein Israelite Hospital, Sírio-Libanês Hospital, A.C.Camargo Cancer Center, São Camilo Hospital, Dasa, Alliar, Salomão Zoppi, CDB Medicina Diagnóstica, Afip and the Brazilian Institute for Cancer Control (IBCC).</p>
+
       <div class="clients__grid">
         <div class="client"><img src="../assets/img/clientes/logos/klabin.png" alt="Klabin" loading="lazy" decoding="async" width="175" height="128"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/johnson-johnson.png" alt="Johnson &amp; Johnson" loading="lazy" decoding="async" width="277" height="38"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/loreal.png" alt="L'Oréal" loading="lazy" decoding="async" width="244" height="55"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/johnson-johnson.png" alt="Johnson &amp; Johnson" loading="lazy" decoding="async" width="190" height="26"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/loreal.png" alt="L'Oréal" loading="lazy" decoding="async" width="190" height="43"></div>
         <div class="client"><img src="../assets/img/clientes/logos/bayer.png" alt="Bayer" loading="lazy" decoding="async" width="121" height="121"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/eurofarma.png" alt="Eurofarma" loading="lazy" decoding="async" width="268" height="72"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/hines.png" alt="Hines" loading="lazy" decoding="async" width="206" height="70"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/eurofarma.png" alt="Eurofarma" loading="lazy" decoding="async" width="190" height="51"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/hines.png" alt="Hines" loading="lazy" decoding="async" width="190" height="65"></div>
         <div class="client"><img src="../assets/img/clientes/logos/adidas.png" alt="adidas" loading="lazy" decoding="async" width="163" height="114"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/decathlon.png" alt="Decathlon" loading="lazy" decoding="async" width="239" height="70"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/albert-einstein.png" alt="Albert Einstein Israelite Hospital" loading="lazy" decoding="async" width="249" height="113"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/sirio-libanes.png" alt="Sírio-Libanês Hospital" loading="lazy" decoding="async" width="291" height="90"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/ac-camargo.png" alt="A.C.Camargo Cancer Center" loading="lazy" decoding="async" width="260" height="77"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/sao-camilo.png" alt="São Camilo Hospital" loading="lazy" decoding="async" width="271" height="98"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/decathlon.png" alt="Decathlon" loading="lazy" decoding="async" width="190" height="56"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/albert-einstein.png" alt="Albert Einstein Israelite Hospital" loading="lazy" decoding="async" width="190" height="86"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/sirio-libanes.png" alt="Sírio-Libanês Hospital" loading="lazy" decoding="async" width="190" height="59"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/ac-camargo.png" alt="A.C.Camargo Cancer Center" loading="lazy" decoding="async" width="190" height="56"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/sao-camilo.png" alt="São Camilo Hospital" loading="lazy" decoding="async" width="190" height="69"></div>
         <div class="client"><img src="../assets/img/clientes/logos/abb.png" alt="ABB" loading="lazy" decoding="async" width="158" height="69"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/general-electric.png" alt="General Electric" loading="lazy" decoding="async" width="207" height="98"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/general-electric.png" alt="General Electric" loading="lazy" decoding="async" width="190" height="90"></div>
         <div class="client"><img src="../assets/img/clientes/logos/votorantim.png" alt="Votorantim" loading="lazy" decoding="async" width="175" height="116"></div>
         <div class="client"><img src="../assets/img/clientes/logos/ache.png" alt="Aché Laboratories" loading="lazy" decoding="async" width="179" height="47"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/janssen-cilag.png" alt="Janssen-Cilag" loading="lazy" decoding="async" width="307" height="87"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/allergan.png" alt="Allergan" loading="lazy" decoding="async" width="291" height="73"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/chiesi.png" alt="Chiesi" loading="lazy" decoding="async" width="194" height="75"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/beiersdorf.png" alt="Beiersdorf" loading="lazy" decoding="async" width="224" height="60"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/janssen-cilag.png" alt="Janssen-Cilag" loading="lazy" decoding="async" width="190" height="54"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/allergan.png" alt="Allergan" loading="lazy" decoding="async" width="190" height="48"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/chiesi.png" alt="Chiesi" loading="lazy" decoding="async" width="190" height="73"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/beiersdorf.png" alt="Beiersdorf" loading="lazy" decoding="async" width="190" height="51"></div>
         <div class="client"><img src="../assets/img/clientes/logos/nivea.png" alt="Nivea" loading="lazy" decoding="async" width="115" height="115"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/essity.png" alt="Essity" loading="lazy" decoding="async" width="218" height="60"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/essity.png" alt="Essity" loading="lazy" decoding="async" width="190" height="52"></div>
         <div class="client"><img src="../assets/img/clientes/logos/sca.png" alt="SCA Hygiene Products" loading="lazy" decoding="async" width="108" height="148"></div>
         <div class="client"><img src="../assets/img/clientes/logos/ype.png" alt="Ypê" loading="lazy" decoding="async" width="158" height="133"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/ashland.png" alt="Ashland" loading="lazy" decoding="async" width="296" height="102"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/ashland.png" alt="Ashland" loading="lazy" decoding="async" width="190" height="65"></div>
         <div class="client"><img src="../assets/img/clientes/logos/ceva.png" alt="Ceva Santé Animale" loading="lazy" decoding="async" width="144" height="149"></div>
         <div class="client"><img src="../assets/img/clientes/logos/goodman.png" alt="Goodman" loading="lazy" decoding="async" width="139" height="125"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/glp.png" alt="GLP" loading="lazy" decoding="async" width="201" height="144"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/barzel.png" alt="Barzel Properties" loading="lazy" decoding="async" width="216" height="68"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/dasa.png" alt="Dasa" loading="lazy" decoding="async" width="236" height="56"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/alliar.png" alt="Alliar" loading="lazy" decoding="async" width="192" height="119"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/glp.png" alt="GLP" loading="lazy" decoding="async" width="190" height="136"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/barzel.png" alt="Barzel Properties" loading="lazy" decoding="async" width="190" height="60"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/dasa.png" alt="Dasa" loading="lazy" decoding="async" width="190" height="45"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/alliar.png" alt="Alliar" loading="lazy" decoding="async" width="190" height="118"></div>
         <div class="client"><img src="../assets/img/clientes/logos/salomao-zoppi.png" alt="Salomão Zoppi Diagnostics" loading="lazy" decoding="async" width="189" height="83"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/cdb.png" alt="CDB Medicina Diagnóstica" loading="lazy" decoding="async" width="202" height="143"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/afip.png" alt="Afip Medicina Diagnóstica" loading="lazy" decoding="async" width="218" height="94"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/ibcc.png" alt="Brazilian Institute for Cancer Control" loading="lazy" decoding="async" width="341" height="105"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/copart.png" alt="Copart" loading="lazy" decoding="async" width="224" height="92"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/embracon.png" alt="Consórcio Embracon" loading="lazy" decoding="async" width="215" height="99"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/cultura-inglesa.png" alt="Cultura Inglesa" loading="lazy" decoding="async" width="227" height="104"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/pylos.png" alt="Pylos Real Estate Investor" loading="lazy" decoding="async" width="207" height="66"></div>
-        <div class="client"><img src="../assets/img/clientes/logos/yoo2.png" alt="YOO2 Rio de Janeiro" loading="lazy" decoding="async" width="207" height="65"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/cdb.png" alt="CDB Medicina Diagnóstica" loading="lazy" decoding="async" width="190" height="135"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/afip.png" alt="Afip Medicina Diagnóstica" loading="lazy" decoding="async" width="190" height="82"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/ibcc.png" alt="Brazilian Institute for Cancer Control" loading="lazy" decoding="async" width="190" height="59"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/copart.png" alt="Copart" loading="lazy" decoding="async" width="190" height="78"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/embracon.png" alt="Consórcio Embracon" loading="lazy" decoding="async" width="190" height="87"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/cultura-inglesa.png" alt="Cultura Inglesa" loading="lazy" decoding="async" width="190" height="87"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/pylos.png" alt="Pylos Real Estate Investor" loading="lazy" decoding="async" width="190" height="61"></div>
+        <div class="client"><img src="../assets/img/clientes/logos/yoo2.png" alt="YOO2 Rio de Janeiro" loading="lazy" decoding="async" width="190" height="60"></div>
       </div>
 
       <p class="clients__note" data-i18n="clients.note">
-        Trademarks and logos belong to their respective owners and are shown here
-        solely as a record of projects delivered.
+        Trademarks and logos belong to their respective owners and are shown
+        solely as a record of projects Certek has delivered; they do not imply
+        sponsorship or endorsement.
       </p>
     </div>
   </section>
@@ -335,28 +488,27 @@
         <p class="section__eyebrow" data-i18n="works.eyebrow">Our projects</p>
         <h2 class="section__title" data-i18n="works.title">Great projects, great stories</h2>
         <p class="section__lead" data-i18n="works.lead">
-          Over the course of our history we have built experience across many
-          different sectors, always with a focus on quality, safety and
-          innovation.
+          We have built up experience across a wide range of sectors, always with
+          a focus on quality, safety and innovation.
         </p>
       </div>
 
       <div class="works">
         <article class="work" data-reveal>
           <figure class="work__figure">
-            <img src="../assets/img/obras/clara-resorts-2.jpg" alt="Clara Resorts" loading="lazy" decoding="async" width="640" height="480">
+            <img src="../assets/img/obras/clara-resorts-2.jpg" alt="Clara Resorts leisure area, delivered by Certek" loading="lazy" decoding="async" width="640" height="480">
             <span class="work__status" data-i18n="works.status.done">Delivered</span>
           </figure>
           <div class="work__body">
             <p class="work__sector" data-i18n="works.clara.sector">Hospitality</p>
             <h3 data-i18n="works.clara.title">Clara Resorts</h3>
-            <p data-i18n="works.clara.text">Hospitality development delivered, including the Ibiúna expansions and Vila da Mata.</p>
+            <p data-i18n="works.clara.text">Hospitality development in Ibiúna, São Paulo state, including the Vila da Mata expansion.</p>
           </div>
         </article>
 
         <article class="work" data-reveal>
           <figure class="work__figure">
-            <img src="../assets/img/obras/klabin.jpg" alt="Klabin project" loading="lazy" decoding="async" width="768" height="432">
+            <img src="../assets/img/obras/klabin.jpg" alt="Klabin forest products terminal in Paranaguá" loading="lazy" decoding="async" width="768" height="432">
             <span class="work__status" data-i18n="works.status.done">Delivered</span>
           </figure>
           <div class="work__body">
@@ -368,7 +520,7 @@
 
         <article class="work" data-reveal>
           <figure class="work__figure">
-            <img src="../assets/img/obras/sca-1.jpg" alt="SCA Hygiene Products project" loading="lazy" decoding="async" width="630" height="408">
+            <img src="../assets/img/obras/sca-1.jpg" alt="SCA Hygiene Products plant in operation" loading="lazy" decoding="async" width="630" height="408">
             <span class="work__status" data-i18n="works.status.done">Delivered</span>
           </figure>
           <div class="work__body">
@@ -380,7 +532,7 @@
 
         <article class="work" data-reveal>
           <figure class="work__figure">
-            <img src="../assets/img/obras/goodman.jpg" alt="Goodman logistics warehouse" loading="lazy" decoding="async" width="1447" height="992">
+            <img src="../assets/img/obras/goodman.jpg" alt="Goodman long-span logistics warehouse" loading="lazy" decoding="async" width="1080" height="740">
             <span class="work__status" data-i18n="works.status.done">Delivered</span>
           </figure>
           <div class="work__body">
@@ -402,33 +554,33 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-4.5 7-10a7 7 0 1 0-14 0c0 5.5 7 10 7 10z"/><path d="M12 12v6M9 10c1.5 0 3 1 3 2"/></svg>
             <span data-i18n="leed.seal">LEED · USGBC</span>
           </p>
-          <h2 class="section__title" data-i18n="leed.title">Sustainability that survives the audit</h2>
+          <h2 class="section__title" data-i18n="leed.title">Sustainability that passes the audit</h2>
           <p class="section__lead" data-i18n="leed.lead">
-            We specialise in projects certified under the LEED rating system of
-            the U.S. Green Building Council, which delivers healthier, more
-            comfortable environments aligned with global best practice in
-            sustainability.
+            We specialize in buildings certified to LEED, the rating system run
+            by the U.S. Green Building Council. Certification means healthier,
+            more comfortable buildings, aligned with global sustainability best
+            practices.
           </p>
         </div>
 
         <div>
           <p class="section__eyebrow" data-i18n="awards.eyebrow">Recognition</p>
-          <h2 class="section__title" data-i18n="awards.title">Commitment that goes beyond the certificates</h2>
+          <h2 class="section__title" data-i18n="awards.title">Commitment that goes beyond certification</h2>
           <div class="awards">
             <article class="award" data-reveal>
               <p class="award__year">2014</p>
-              <h3 data-i18n="awards.master.title">20th Master Imobiliário Award</h3>
-              <p data-i18n="awards.master.text">Retrofit Development category, for the Hines — 740 Anastácio project.</p>
+              <h3 data-i18n="awards.master.title">20th Prêmio Master Imobiliário</h3>
+              <p data-i18n="awards.master.text">Brazilian real estate industry award — Retrofit Development category, for the Hines 740 Anastácio project.</p>
             </article>
             <article class="award" data-reveal>
               <p class="award__year" data-i18n="awards.press">Press</p>
-              <h3 data-i18n="awards.finestra.title">Cover of Revista Finestra</h3>
-              <p data-i18n="awards.finestra.text">Architecture, technology and eco-efficiency — for the Hines — 740 Anastácio project.</p>
+              <h3 data-i18n="awards.finestra.title">Cover of Finestra magazine</h3>
+              <p data-i18n="awards.finestra.text">Architecture, technology and eco-efficiency — on the Hines 740 Anastácio project.</p>
             </article>
             <article class="award" data-reveal>
               <p class="award__year" data-i18n="awards.press">Press</p>
               <h3 data-i18n="awards.techne.title">Featured in Téchne magazine</h3>
-              <p data-i18n="awards.techne.text">The Brazilian civil engineering magazine, on the Hines — 740 Anastácio project.</p>
+              <p data-i18n="awards.techne.text">A Brazilian magazine for civil engineers, on the Hines 740 Anastácio project.</p>
             </article>
           </div>
         </div>
@@ -448,26 +600,63 @@
         <div class="pillar" data-reveal>
           <h3 data-i18n="values.mission.title">Mission</h3>
           <p data-i18n="values.mission.text">
-            To make construction solutions possible with client satisfaction as
-            the primary focus, meeting the demands of innovation and bringing the
-            best engineering resources to bear.
+            To deliver construction solutions built around client satisfaction,
+            applying innovative thinking and the best engineering resources
+            available.
           </p>
         </div>
         <div class="pillar" data-reveal>
           <h3 data-i18n="values.vision.title">Vision</h3>
           <p data-i18n="values.vision.text">
-            To develop new resources for construction and to consistently seek out
-            the most advanced technologies in the delivery of buildings and
+            To develop new construction capabilities and to keep using the most
+            advanced technologies available when building facilities and
             infrastructure.
           </p>
         </div>
         <div class="pillar" data-reveal>
           <h3 data-i18n="values.values.title">Values</h3>
           <p data-i18n="values.values.text">
-            Integrity and innovation, and through them successful outcomes in the
-            buildings and developments we deliver.
+            Integrity and innovation — the foundation of every building and
+            development we deliver.
           </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ ------------------------------------------------------------------ -->
+  <section class="section section--sand" id="faq">
+    <div class="container container--narrow">
+      <div class="section__head">
+        <p class="section__eyebrow" data-i18n="faq.eyebrow">Frequently asked questions</p>
+        <h2 class="section__title" data-i18n="faq.title">What people usually ask us</h2>
+      </div>
+
+      <div class="faq">
+        <details class="faq__item">
+          <summary><h3 data-i18n="faq.q1">Which sectors does Certek build in?</h3></summary>
+          <div class="faq__answer"><p data-i18n="faq.a1">Industrial, commercial, logistics, residential, healthcare and institutional — the six sectors the company has delivered projects in since 2012.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary><h3 data-i18n="faq.q2">What does turnkey delivery include?</h3></summary>
+          <div class="faq__answer"><p data-i18n="faq.a2">Every phase of the project: detailed design, planning and budgeting, construction with coordination of multidisciplinary teams and management of subcontractors, through to handover of a facility ready to operate.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary><h3 data-i18n="faq.q3">Can Certek build while the plant keeps running?</h3></summary>
+          <div class="faq__answer"><p data-i18n="faq.a3">Yes. Delivered projects include the SCA Hygiene Products plant, built without shutting the operation down. Certek also works in hospital environments and in commercial units that stay open.</p></div>
+        </details>
+        <details class="faq__item">
+          <summary><h3 data-i18n="faq.q4">Does Certek deliver LEED-certified projects?</h3></summary>
+          <div class="faq__answer"><p data-i18n="faq.a4">Yes. Certek builds projects certified under the LEED rating system of the U.S. Green Building Council (USGBC).</p></div>
+        </details>
+        <details class="faq__item">
+          <summary><h3 data-i18n="faq.q5">Where does Certek operate?</h3></summary>
+          <div class="faq__answer"><p data-i18n="faq.a5">The company is headquartered in Itaim Bibi, São Paulo (SP). Delivered projects include the Klabin forest products terminal in Paranaguá (PR) and Clara Resorts in Ibiúna (SP).</p></div>
+        </details>
+        <details class="faq__item">
+          <summary><h3 data-i18n="faq.q6">How do I request a proposal?</h3></summary>
+          <div class="faq__answer"><p data-i18n="faq.a6">Through the form on this page, by email (certek@certek.com.br), or by phone and WhatsApp (+55 11 94785-4844). Telling us the sector, location and target schedule helps us get back to you faster.</p></div>
+        </details>
       </div>
     </div>
   </section>
@@ -475,10 +664,10 @@
   <!-- CTA band -------------------------------------------------------------- -->
   <section class="section cta-band">
     <div class="container container--narrow">
-      <h2 data-i18n="cta.title">Shall we talk about your next project?</h2>
+      <h2 data-i18n="cta.title">Let's talk about the next project.</h2>
       <div class="cta-band__actions">
         <a class="btn btn--light" href="#contato" data-i18n="cta.primary">Get in touch</a>
-        <a class="btn btn--on-dark" href="https://wa.me/5511947854844" rel="noopener" data-i18n="cta.whatsapp">Message on WhatsApp</a>
+        <a class="btn btn--on-dark" href="https://wa.me/5511947854844?text=Hello%2C%20I%20came%20from%20the%20Certek%20website." target="_blank" rel="noopener" data-i18n="cta.whatsapp">Message on WhatsApp</a>
       </div>
     </div>
   </section>
@@ -489,10 +678,10 @@
       <div class="contact">
         <div>
           <p class="section__eyebrow" data-i18n="contact.eyebrow">Contact</p>
-          <h2 class="section__title" data-i18n="contact.title">We are ready to help</h2>
+          <h2 class="section__title" data-i18n="contact.title">We're ready to help</h2>
           <p data-i18n="contact.lead">
             At Certek we believe in solid relationships and direct communication.
-            If you have a question, would like to work with us, or want to know
+            If you have a question, would like us to build for you, or want to know
             more about what we do, get in touch.
           </p>
 
@@ -502,8 +691,8 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 6 9-6"/></svg>
               </span>
               <span>
-                <span class="channel__label" data-i18n="contact.email">E-mail</span>
-                <a href="mailto:certek@certek.com.br">certek@certek.com.br</a>
+                <span class="channel__label" data-i18n="contact.email">Email</span>
+                <a href="mailto:certek@certek.com.br?subject=Enquiry%20from%20the%20website">certek@certek.com.br</a>
               </span>
             </div>
 
@@ -514,6 +703,7 @@
               <span>
                 <span class="channel__label" data-i18n="contact.phone">Phone and WhatsApp</span>
                 <a href="tel:+5511947854844">+55 11 94785-4844</a>
+                <a href="https://wa.me/5511947854844?text=Hello%2C%20I%20came%20from%20the%20Certek%20website." target="_blank" rel="noopener">WhatsApp</a>
               </span>
             </div>
 
@@ -524,9 +714,19 @@
               <span>
                 <span class="channel__label" data-i18n="contact.address">Address</span>
                 <address>
-                  R. Dr. Renato Paes de Barros, 618 — suite 37<br>
-                  Itaim Bibi — São Paulo, SP — 04530-000 — Brazil
+                  R. Dr. Renato Paes de Barros, 618 · suite 37<br>
+                  Itaim Bibi, São Paulo — SP · 04530-000 · Brazil
                 </address>
+              </span>
+            </div>
+
+            <div class="channel">
+              <span class="channel__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="7" width="19" height="13" rx="2"/><path d="M8.5 7V5.5a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2V7"/><path d="M2.5 12h19"/></svg>
+              </span>
+              <span>
+                <span class="channel__label" data-i18n="contact.careers">Careers</span>
+                <a href="mailto:certek@certek.com.br?subject=Careers%20-%20CV" data-i18n="contact.careers.link">Send your CV to our team</a>
               </span>
             </div>
           </div>
@@ -539,7 +739,7 @@
           To switch it on: create a form on Formspree (or use Netlify Forms) and
           replace the action with the URL you get back.
         -->
-        <form class="form" id="contact-form" method="post" action="TODO_FORM_ENDPOINT" novalidate>
+        <form class="form" id="contact-form" method="post" action="TODO_FORM_ENDPOINT">
           <div class="field">
             <label for="f-nome" data-i18n="form.name">Name</label>
             <input type="text" id="f-nome" name="nome" autocomplete="name" required>
@@ -549,18 +749,30 @@
             <input type="text" id="f-empresa" name="empresa" autocomplete="organization">
           </div>
           <div class="field">
-            <label for="f-email" data-i18n="form.emailLabel">E-mail</label>
+            <label for="f-papel" data-i18n="form.role">You are</label>
+            <select id="f-papel" name="papel">
+              <option value="cliente" data-i18n="form.role.owner">Client / project owner</option>
+              <option value="arquiteto" data-i18n="form.role.designer">Architect or designer</option>
+              <option value="gerenciadora" data-i18n="form.role.pm">Project manager or consultant</option>
+              <option value="fornecedor" data-i18n="form.role.supplier">Supplier or subcontractor</option>
+              <option value="outro" data-i18n="form.role.other">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-email" data-i18n="form.emailLabel">Email</label>
             <input type="email" id="f-email" name="email" autocomplete="email" required>
           </div>
           <div class="field">
             <label for="f-mensagem" data-i18n="form.message">About the project</label>
             <textarea id="f-mensagem" name="mensagem" required></textarea>
-            <span class="field__hint" data-i18n="form.hint">Sector, location and target schedule help us come back to you faster.</span>
+            <span class="field__hint" data-i18n="form.hint">Sector, location and target schedule help us get back to you faster.</span>
           </div>
+          <noscript><p class="form__note">Without JavaScript this form cannot send. Please email <a href="mailto:certek@certek.com.br?subject=Enquiry%20from%20the%20website">certek@certek.com.br</a> or call +55 11 94785-4844.</p></noscript>
           <button class="btn btn--primary" type="submit" data-i18n="form.submit">Send message</button>
           <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
           <p class="form__note" data-i18n="form.note">
-            Prefer plain e-mail? Write to certek@certek.com.br.
+            Prefer email? Write to <a href="mailto:certek@certek.com.br?subject=Enquiry%20from%20the%20website">certek@certek.com.br</a>
+            or message us on <a href="https://wa.me/5511947854844?text=Hello%2C%20I%20came%20from%20the%20Certek%20website." target="_blank" rel="noopener">WhatsApp</a>.
           </p>
         </form>
       </div>
@@ -572,7 +784,7 @@
   <div class="container">
     <div class="site-footer__top">
       <div>
-        <img src="../assets/img/logo-certek-branco.png" alt="Certek Construtora" width="600" height="307" loading="lazy">
+        <img src="../assets/img/logo-certek-branco.png" alt="Certek Construtora" loading="lazy" width="288" height="147">
         <p data-i18n="footer.tagline">
           Construction through every phase — from detailed design to turnkey
           handover.
@@ -593,7 +805,7 @@
       <div>
         <h3 data-i18n="footer.contact">Contact</h3>
         <ul>
-          <li><a href="mailto:certek@certek.com.br">certek@certek.com.br</a></li>
+          <li><a href="mailto:certek@certek.com.br?subject=Enquiry%20from%20the%20website">certek@certek.com.br</a></li>
           <li><a href="tel:+5511947854844">+55 11 94785-4844</a></li>
           <li><a href="https://www.linkedin.com/company/certek-construtora/" target="_blank" rel="noopener">LinkedIn</a></li>
         </ul>
@@ -612,6 +824,63 @@
   </div>
 </footer>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which sectors does Certek build in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Industrial, commercial, logistics, residential, healthcare and institutional — the six sectors the company has delivered projects in since 2012."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does turnkey delivery include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every phase of the project: detailed design, planning and budgeting, construction with coordination of multidisciplinary teams and management of subcontractors, through to handover of a facility ready to operate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Certek build while the plant keeps running?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Delivered projects include the SCA Hygiene Products plant, built without shutting the operation down. Certek also works in hospital environments and in commercial units that stay open."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Certek deliver LEED-certified projects?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Certek builds projects certified under the LEED rating system of the U.S. Green Building Council (USGBC)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does Certek operate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The company is headquartered in Itaim Bibi, São Paulo (SP). Delivered projects include the Klabin forest products terminal in Paranaguá (PR) and Clara Resorts in Ibiúna (SP)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I request a proposal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Through the form on this page, by email (certek@certek.com.br), or by phone and WhatsApp (+55 11 94785-4844). Telling us the sector, location and target schedule helps us get back to you faster."
+      }
+    }
+  ]
+}
+</script>
 <script src="../assets/js/site.js" defer></script>
 </body>
 </html>

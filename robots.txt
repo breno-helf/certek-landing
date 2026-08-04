@@ -1,4 +1,37 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://certek.com.br/sitemap.xml
+# Rastreadores de busca generativa e de treinamento. Estão declarados
+# explicitamente porque Google-Extended e Applebot-Extended são tokens de
+# OPT-OUT separados: sem uma linha própria, uma edição futura no grupo `*` pode
+# cortar a presença da Certek em AI Overviews sem ninguém perceber.
+#
+# Atenção: um grupo nomeado faz o bot ignorar o grupo `*` inteiro. Hoje todos
+# recebem Allow: /, então não há efeito colateral — mas um Disallow futuro em `*`
+# precisa ser repetido em cada grupo abaixo.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://breno-helf.github.io/certek-landing/sitemap.xml

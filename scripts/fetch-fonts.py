@@ -29,9 +29,22 @@ UA = (
 )
 SUBSETS = ("latin", "latin-ext")
 
+# Peça FAIXAS de peso (wght@400..700), não pesos soltos (wght@400;500;600;700).
+#
+# O Google Fonts serve Inter como fonte VARIÁVEL: pedindo pesos soltos ele
+# devolve a MESMA URL de arquivo em cada bloco @font-face. Salvando um arquivo
+# por peso, gravamos quatro cópias byte-idênticas (md5 igual) e o navegador
+# baixava 47 KB quatro vezes — 145 KB desperdiçados em toda visita fria.
+#
+# Com faixa, emitimos um @font-face por família+subset com `font-weight: 400 700`,
+# e o navegador baixa um arquivo que cobre todos os pesos.
+#
+# Gentium Book Plus NÃO é variável: ali os pesos são arquivos de verdade, e o
+# deduplicador abaixo não encontra repetição. Por isso a lógica é por hash, não
+# por suposição sobre a família.
 FAMILIES = [
     ("Gentium+Book+Plus:wght@400;700", "Gentium Book Plus", "gentium"),
-    ("Inter:wght@400;500;600;700", "Inter", "inter"),
+    ("Inter:wght@400..700", "Inter", "inter"),
 ]
 
 BLOCK_RE = re.compile(r"/\*\s*(?P<subset>[\w-]+)\s*\*/\s*@font-face\s*\{(?P<body>[^}]*)\}")
@@ -50,6 +63,9 @@ def field(body: str, name: str) -> str:
 
 def main() -> int:
     FONTDIR.mkdir(parents=True, exist_ok=True)
+    for antigo in FONTDIR.glob("*.woff2"):
+        antigo.unlink()  # o nome dos arquivos mudou; não deixar órfão para trás
+
     faces: list[str] = []
     count = 0
 
@@ -57,33 +73,53 @@ def main() -> int:
         print(f"==> {family}")
         css = get(f"https://fonts.googleapis.com/css2?family={query}&display=swap").decode()
 
+        # Junta os blocos por (subset, estilo, ARQUIVO). Se dois pesos apontam
+        # para o mesmo binário, viram uma face só com faixa de peso.
+        grupos: dict[tuple[str, str, str], dict] = {}
         for m in BLOCK_RE.finditer(css):
             subset = m.group("subset")
             if subset not in SUBSETS:
                 continue
             body = m.group("body")
-            weight = field(body, "font-weight") or "400"
-            style = field(body, "font-style") or "normal"
-            urange = field(body, "unicode-range")
             src = re.search(r"url\(([^)]+)\)", field(body, "src"))
             if not src:
                 continue
+            url = src.group(1)
+            style = field(body, "font-style") or "normal"
+            peso = field(body, "font-weight") or "400"
 
-            name = f"{slug}-{weight}-{subset}.woff2"
-            (FONTDIR / name).write_bytes(get(src.group(1)))
+            chave = (subset, style, url)
+            g = grupos.setdefault(
+                chave,
+                {"url": url, "subset": subset, "style": style,
+                 "urange": field(body, "unicode-range"), "pesos": []},
+            )
+            g["pesos"].append(peso)
+
+        for g in grupos.values():
+            # "400 700" (faixa variável) ou "600" (peso único)
+            numeros = []
+            for p in g["pesos"]:
+                numeros.extend(int(n) for n in re.findall(r"\d+", p))
+            peso_css = str(min(numeros)) if min(numeros) == max(numeros) \
+                else f"{min(numeros)} {max(numeros)}"
+            sufixo = "" if len(grupos) <= len(SUBSETS) else f"-{min(numeros)}"
+
+            name = f"{slug}{sufixo}-{g['subset']}.woff2"
+            (FONTDIR / name).write_bytes(get(g["url"]))
             size = (FONTDIR / name).stat().st_size
-            print(f"   {name:<34} {size // 1024:>3} KB")
+            print(f"   {name:<32} peso {peso_css:<9} {size // 1024:>3} KB")
 
             face = [
                 "@font-face {",
                 f"  font-family: '{family}';",
-                f"  font-style: {style};",
-                f"  font-weight: {weight};",
+                f"  font-style: {g['style']};",
+                f"  font-weight: {peso_css};",
                 "  font-display: swap;",
                 f"  src: url('../fonts/{name}') format('woff2');",
             ]
-            if urange:
-                face.append(f"  unicode-range: {urange};")
+            if g["urange"]:
+                face.append(f"  unicode-range: {g['urange']};")
             face.append("}")
             faces.append("\n".join(face))
             count += 1

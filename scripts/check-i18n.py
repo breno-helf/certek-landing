@@ -18,6 +18,7 @@ Uso:  python3 scripts/check-i18n.py
 
 from __future__ import annotations
 
+import json
 import pathlib
 import re
 import sys
@@ -155,7 +156,34 @@ def main() -> int:
                 f"{rotulo}: PT tem {pt.contagens[campo]}, EN tem {en.contagens[campo]}"
             )
 
-    # 5. arquivos referenciados existem
+    # 5. JSON-LD: válido nos dois, e a MESMA entidade dos dois lados.
+    # O @id compartilhado é o que diz aos buscadores que /pt e /en falam da
+    # mesma empresa; se divergir, viram duas organizações distintas — e nada
+    # mais neste script olha para dentro do JSON-LD.
+    ids = {}
+    for nome, caminho in (("PT", PT), ("EN", EN)):
+        blocos = re.findall(
+            r'<script type="application/ld\+json">(.*?)</script>',
+            caminho.read_text(encoding="utf-8"),
+            re.S,
+        )
+        if not blocos:
+            problemas.append(f"{nome}: nenhum bloco JSON-LD")
+            continue
+        for i, bruto in enumerate(blocos, 1):
+            try:
+                dado = json.loads(bruto)
+            except json.JSONDecodeError as e:
+                problemas.append(f"{nome}: JSON-LD #{i} inválido — {e}")
+                continue
+            for no in dado.get("@graph", []):
+                tipos = no.get("@type", "")
+                if "GeneralContractor" in tipos or "Organization" in tipos:
+                    ids[nome] = no.get("@id")
+    if len(ids) == 2 and len(set(ids.values())) != 1:
+        problemas.append(f"@id da organização difere entre PT e EN: {ids}")
+
+    # 6. arquivos referenciados existem
     for nome, caminho in (("PT", PT), ("EN", EN)):
         for ref in sorted(recursos(caminho)):
             if not ref.exists():

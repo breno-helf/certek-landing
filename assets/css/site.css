@@ -26,6 +26,9 @@
   --sand: #f6f3f0;
   --sand-deep: #ece6e0;
   --line: #e4ded9;
+  /* Borda de campo de formulário precisa de 3:1 contra o fundo (WCAG 1.4.11).
+     --line dá 1,33:1 — serve para separar seções, não para delimitar controle. */
+  --line-field: #8c8178;
   --line-dark: rgba(255, 255, 255, 0.16);
 
   /* Tipografia */
@@ -48,8 +51,6 @@
   --sp-5: 2rem;
   --sp-6: 3rem;
   --sp-7: 4rem;
-  --sp-8: 6rem;
-  --sp-9: 8rem;
 
   --section-y: clamp(3.5rem, 8vw, 7rem);
   --gutter: clamp(1.25rem, 4vw, 3rem);
@@ -167,6 +168,10 @@ ol {
   top: 0;
 }
 
+main:focus {
+  outline: none;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -262,10 +267,6 @@ ol {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.grid--4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
 /* --------------------------------------------------------------------------
    4. Botões
    -------------------------------------------------------------------------- */
@@ -303,18 +304,6 @@ ol {
   border-color: var(--wine-bright);
 }
 
-.btn--ghost {
-  background: transparent;
-  border-color: currentColor;
-  color: var(--wine);
-}
-
-.btn--ghost:hover {
-  background: var(--wine);
-  border-color: var(--wine);
-  color: #fff;
-}
-
 .btn--on-dark {
   background: transparent;
   border-color: rgba(255, 255, 255, 0.55);
@@ -347,7 +336,6 @@ ol {
   top: 0;
   z-index: 100;
   background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: saturate(160%) blur(12px);
   border-bottom: 1px solid var(--line);
 }
 
@@ -464,12 +452,35 @@ ol {
   background: var(--sand);
 }
 
+/* CTA permanente. Fica fora do <nav> recolhível de propósito: entre o herói e a
+   faixa final há muita rolagem sem nenhum botão de ação na tela.
+   A ordem é explícita porque no DOM ele vem antes do <nav> (para no mobile
+   ficar ao lado do hamburguer), mas no desktop deve aparecer depois do menu. */
+.brand {
+  order: 1;
+}
+
+.nav {
+  order: 2;
+}
+
+.site-header__cta {
+  order: 3;
+  padding: 0.6rem 1.1rem;
+  font-size: var(--fs-micro);
+  white-space: nowrap;
+}
+
+.nav-toggle {
+  order: 4;
+}
+
 .nav-toggle {
   display: none;
   width: 2.75rem;
   height: 2.75rem;
   padding: 0;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-field);
   border-radius: var(--radius);
   background: var(--paper);
   cursor: pointer;
@@ -574,6 +585,10 @@ ol {
   width: 2.25rem;
   height: 2px;
   background: var(--clay);
+}
+
+.hero__title .hero__eyebrow {
+  display: block;
 }
 
 .hero__title {
@@ -732,9 +747,9 @@ ol {
    9. Clientes
    -------------------------------------------------------------------------- */
 
-/* São 42 logos. Com células grandes a seção viraria uma parede de 1.000 px,
+/* São 40 logos. Com células grandes a seção viraria uma parede de 1.000 px,
    então o mosaico é denso de propósito: ~9 colunas no desktop, 5 linhas. */
-/* Sem linhas de grade: 42 logos nunca fecham a última linha exatamente, e o
+/* Sem linhas de grade: 40 logos nunca fecham a última linha exatamente, e o
    truque de gap com fundo colorido deixava um bloco cinza vazio no fim. Sem as
    linhas, a linha incompleta simplesmente não aparece. */
 .clients__grid {
@@ -774,6 +789,24 @@ ol {
   opacity: 1;
 }
 
+/* Sem hover (touch), o :hover nunca dispara e a seção que é a razão de ser da
+   página ficaria cinza para a maioria dos visitantes. */
+@media (hover: none) {
+  .client img {
+    filter: none;
+    opacity: 0.9;
+  }
+}
+
+.clients__roster {
+  max-width: 70ch;
+  margin: 0 auto var(--sp-4);
+  text-align: center;
+  font-size: var(--fs-small);
+  line-height: 1.7;
+  color: var(--ink-faint);
+}
+
 .clients__note {
   margin-top: var(--sp-4);
   font-size: var(--fs-small);
@@ -803,8 +836,7 @@ ol {
 }
 
 .work:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lift);
+  border-color: var(--sand-deep);
 }
 
 .work__figure {
@@ -819,11 +851,6 @@ ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s var(--ease);
-}
-
-.work:hover .work__figure img {
-  transform: scale(1.04);
 }
 
 .work__status {
@@ -957,6 +984,79 @@ ol {
 }
 
 /* --------------------------------------------------------------------------
+   12b. FAQ
+   -------------------------------------------------------------------------- */
+
+/* <details> nativo: abre e fecha sem JavaScript e degrada perfeitamente.
+   Pergunta explícita + resposta curta e autocontida também é o formato que os
+   buscadores generativos mais recortam. */
+.faq {
+  display: grid;
+  gap: var(--sp-2);
+}
+
+.faq__item {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  overflow: hidden;
+}
+
+.faq__item[open] {
+  border-color: var(--sand-deep);
+  box-shadow: var(--shadow-card);
+}
+
+.faq__item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq__item summary h3 {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* seta desenhada em CSS — sem dependência de ícone */
+.faq__item summary::after {
+  content: "";
+  flex-shrink: 0;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-right: 2px solid var(--wine);
+  border-bottom: 2px solid var(--wine);
+  transform: rotate(45deg) translate(-0.15rem, -0.15rem);
+  transition: transform 0.2s var(--ease);
+}
+
+.faq__item[open] summary::after {
+  transform: rotate(-135deg) translate(-0.15rem, -0.15rem);
+}
+
+.faq__item summary:hover {
+  background: var(--sand);
+}
+
+.faq__answer {
+  padding: 0 var(--sp-5) var(--sp-4);
+  color: var(--ink-soft);
+  font-size: var(--fs-small);
+}
+
+/* --------------------------------------------------------------------------
    13. Faixa de CTA
    -------------------------------------------------------------------------- */
 
@@ -1069,7 +1169,7 @@ ol {
 .field select {
   width: 100%;
   padding: 0.75rem 0.9rem;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-field);
   border-radius: var(--radius);
   background: var(--paper);
   font-family: inherit;
@@ -1078,12 +1178,38 @@ ol {
   transition: border-color 0.15s var(--ease), box-shadow 0.15s var(--ease);
 }
 
-.field input:focus,
-.field textarea:focus,
-.field select:focus {
+/* O foco tem de ficar visível. A regra antiga fazia `outline: none` e trocava
+   por um box-shadow a 12% de alfa — cerca de 1,15:1, invisível na prática, e
+   com especificidade suficiente para vencer o :focus-visible global. */
+.field input:focus-visible,
+.field textarea:focus-visible,
+.field select:focus-visible {
+  outline: 3px solid var(--clay);
+  outline-offset: 2px;
   border-color: var(--wine);
-  box-shadow: 0 0 0 3px rgba(96, 10, 10, 0.12);
+  box-shadow: none;
+}
+
+.field input:focus:not(:focus-visible),
+.field textarea:focus:not(:focus-visible),
+.field select:focus:not(:focus-visible) {
+  border-color: var(--wine);
   outline: none;
+}
+
+.field input[aria-invalid="true"],
+.field textarea[aria-invalid="true"] {
+  border-color: #a32020;
+}
+
+.btn[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn[disabled]:hover {
+  transform: none;
 }
 
 .field textarea {
@@ -1232,10 +1358,6 @@ ol {
 }
 
 @media (max-width: 900px) {
-  .grid--4 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .grid--3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1284,6 +1406,24 @@ ol {
     scroll-padding-top: 4.5rem;
   }
 
+  /* No mobile a barra fica disputada: marca + CTA + hamburguer. Sem
+     flex-shrink: 0 o botão do menu era espremido para 19px — bem abaixo do
+     mínimo de toque. O CTA é quem cede espaço, nunca o hamburguer. */
+  .site-header__inner {
+    gap: var(--sp-2);
+  }
+
+  .nav-toggle {
+    flex-shrink: 0;
+  }
+
+  .site-header__cta {
+    margin-left: auto;
+    padding: 0.55rem 0.85rem;
+    min-height: 44px;
+    min-width: 0;
+  }
+
   /* alvos de toque: 44px é o mínimo confortável com o dedo */
   .lang__item {
     padding: 0.7rem 1rem;
@@ -1320,6 +1460,18 @@ ol {
   }
 }
 
+/* Telas muito estreitas: a marca cede largura para o CTA caber ao lado do
+   hamburguer sem espremer nenhum dos dois. */
+@media (max-width: 420px) {
+  .brand img {
+    width: 104px;
+  }
+
+  .site-header__cta {
+    padding: 0.55rem 0.7rem;
+  }
+}
+
 @media (max-width: 640px) {
   :root {
     --fs-h3: 1.25rem;
@@ -1327,7 +1479,6 @@ ol {
 
   .grid--2,
   .grid--3,
-  .grid--4,
   .works,
   .process {
     grid-template-columns: 1fr;
@@ -1351,7 +1502,7 @@ ol {
   }
 
   /* Blocos de texto ficam em 1 coluna (acima), mas o mosaico de logos não é
-     texto — em 2 colunas ele viraria 21 linhas de rolagem. */
+     texto — em 2 colunas ele viraria 20 linhas de rolagem. */
   .clients__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1373,7 +1524,7 @@ ol {
 
 /* Só nas telas realmente minúsculas o mosaico cai para 2 colunas. O corte fica
    em 340px de propósito: 375px (iPhone SE/mini) é largura comum demais para
-   receber o layout de exceção — em 2 colunas os 42 logos viram 21 linhas. */
+   receber o layout de exceção — em 2 colunas os 40 logos viram 20 linhas. */
 @media (max-width: 340px) {
   .clients__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1381,6 +1532,11 @@ ol {
 }
 
 @media print {
+  .js-reveal [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   .site-header,
   .nav-toggle,
   .hero__media,

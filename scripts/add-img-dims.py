@@ -20,8 +20,9 @@ from PIL import Image
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAGINAS = [ROOT / "index.html", ROOT / "en/index.html"]
 
-# só mexemos nos logos de cliente; as fotos de obra já têm width/height à mão
-ALVO = re.compile(r'<img src="(/assets/img/clientes/logos/[^"]+)"([^>]*?)>')
+# Todas as <img> com caminho local — os caminhos são relativos à própria página
+# (`assets/...` na raiz, `../assets/...` em /en/), por isso o prefixo é livre.
+ALVO = re.compile(r'<img src="((?:\.\./)?assets/img/[^"]+)"([^>]*?)>')
 DIM = re.compile(r'\s(?:width|height)="\d+"')
 
 
@@ -37,7 +38,7 @@ def main() -> int:
 
         def troca(m: re.Match) -> str:
             src, resto = m.group(1), m.group(2)
-            arquivo = ROOT / src.lstrip("/")
+            arquivo = (pagina.parent / src).resolve()
             if not arquivo.is_file():
                 faltando.append(src)
                 return m.group(0)

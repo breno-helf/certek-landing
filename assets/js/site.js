@@ -12,6 +12,7 @@
   "use strict";
 
   var BREAKPOINT = 900;
+  var mq = window.matchMedia("(max-width: " + BREAKPOINT + "px)");
   var ENDPOINT_PLACEHOLDER = "TODO_FORM_ENDPOINT";
 
   /* ---------------------------------------------------------------- menu -- */
@@ -21,7 +22,7 @@
 
   if (toggle && nav) {
     var isMobile = function () {
-      return window.matchMedia("(max-width: " + BREAKPOINT + "px)").matches;
+      return mq.matches;
     };
 
     var setOpen = function (open) {
@@ -40,7 +41,12 @@
       }
     };
     sync();
-    window.addEventListener("resize", sync);
+    // Só ao cruzar o breakpoint — não a cada frame de resize.
+    if (mq.addEventListener) {
+      mq.addEventListener("change", sync);
+    } else {
+      mq.addListener(sync);
+    }
 
     toggle.addEventListener("click", function () {
       setOpen(toggle.getAttribute("aria-expanded") !== "true");
@@ -49,6 +55,13 @@
     // Clicar num link fecha o menu (é uma página só, tudo é âncora).
     nav.addEventListener("click", function (event) {
       if (event.target.closest("a") && isMobile()) setOpen(false);
+    });
+
+    // Tocar fora fecha o menu.
+    document.addEventListener("click", function (event) {
+      if (!isMobile()) return;
+      if (event.target.closest(".nav") || event.target.closest(".nav-toggle")) return;
+      if (toggle.getAttribute("aria-expanded") === "true") setOpen(false);
     });
 
     // Esc fecha e devolve o foco ao botão.
@@ -97,8 +110,8 @@
       ? {
           missing: "Please fill in your name, e-mail and a short description.",
           noEndpoint:
-            "This form is not connected to a mail service yet. Your message has been " +
-            "put into an e-mail — just hit send.",
+            "We've opened an email with your message. If nothing opened, write to " +
+            "certek@certek.com.br directly.",
           sent: "Thank you. We will get back to you shortly.",
           failed: "We could not send it. Please e-mail certek@certek.com.br directly.",
           subject: "Enquiry from the website"
@@ -106,8 +119,8 @@
       : {
           missing: "Preencha nome, e-mail e uma breve descrição.",
           noEndpoint:
-            "O formulário ainda não está ligado a um serviço de envio. Sua mensagem " +
-            "foi colocada num e-mail — é só enviar.",
+            "Abrimos um e-mail com a sua mensagem. Se nada abrir, escreva direto " +
+            "para certek@certek.com.br.",
           sent: "Obrigado. Retornaremos em breve.",
           failed: "Não foi possível enviar. Escreva direto para certek@certek.com.br.",
           subject: "Contato pelo site"
@@ -131,6 +144,19 @@
       if (!nome || !email || !mensagem) {
         event.preventDefault();
         say(t.missing, "error");
+        // Aponta o primeiro campo vazio e leva o foco até ele: num viewport de
+        // 375px a mensagem de erro fica abaixo do botão, fora da tela.
+        var faltando = ["#f-nome", "#f-email", "#f-mensagem"]
+          .map(function (sel) { return form.querySelector(sel); })
+          .filter(function (el) { return el && !el.value.trim(); })[0];
+        if (faltando) {
+          faltando.setAttribute("aria-invalid", "true");
+          faltando.focus();
+          faltando.addEventListener("input", function limpa() {
+            faltando.removeAttribute("aria-invalid");
+            faltando.removeEventListener("input", limpa);
+          });
+        }
         return;
       }
 

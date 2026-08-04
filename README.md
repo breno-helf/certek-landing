@@ -42,6 +42,8 @@ assets/
   img/clientes/logos/   40 logos de clientes, recortados das tiras originais
 scripts/                utilitários (ver abaixo)
 reference/              material de origem — não é servido
+llms.txt                resumo legível por agente (padrão llmstxt.org)
+AGENTS.md               instruções para agentes de código que editarem o repo
 robots.txt · sitemap.xml
 ```
 
@@ -57,6 +59,9 @@ robots.txt · sitemap.xml
 | `../bin/python scripts/name-logos.py` | Dá nome aos recortes |
 | `../bin/python scripts/prep-logo.py` | Limpa o logo e gera a versão branca |
 | `./scripts/make-og-image.sh` | Regenera o `og:image` 1200×630 |
+| `../bin/python scripts/optimize-images.py` | Recomprime logos e fotos (`--dry-run` para simular) |
+| `../bin/python scripts/add-img-dims.py` | Escreve `width`/`height` reais em toda `<img>` |
+| `./scripts/qa-shots.sh` | Screenshots em várias larguras via Chrome headless |
 
 Os scripts com `../bin/python` usam o venv do diretório pai, que já tem Pillow.
 `make-og-image.sh` abre o Chrome headless e pode levar 1–2 minutos na primeira
@@ -77,7 +82,12 @@ A mitigação é `scripts/check-i18n.py`. Cada nó traduzível carrega um atribu
 - nenhuma chave está duplicada dentro do mesmo arquivo;
 - nenhum texto ficou literalmente igual nos dois idiomas (tradução esquecida);
 - os dois têm o mesmo número de logos de cliente e de cards de obra;
-- todo arquivo referenciado em `src`/`href` existe no disco.
+- todo arquivo referenciado em `src`/`href` existe no disco;
+- os blocos JSON-LD são válidos e a organização tem o **mesmo `@id`** dos dois
+  lados — é isso que diz aos buscadores que `/` e `/en/` falam da mesma empresa.
+
+O que ele ainda **não** vigia, e você precisa conferir à mão: o conteúdo dos
+`alt` (também é texto bilíngue) e o que está dentro de `<noscript>`.
 
 **Rode antes de cada commit.** Se um dia a página virar várias, aí vale migrar
 para algo com componentes (Astro resolve bem); para uma página só, um checador
@@ -94,8 +104,26 @@ de 150 linhas custa menos que um toolchain.
 - [ ] **Foto do Hines — 740 Anastácio.** É a obra premiada em 2014, e a imagem
       não é mais recuperável do CDN (o bucket `688fe0a0…` responde 403). Se a
       Certek tiver o original, a seção de reconhecimento ganha muito.
-- [ ] **Domínio.** As tags canônicas assumem `https://certek.com.br`. Se o
-      primeiro deploy for em outro domínio, é um find-and-replace.
+- [ ] **Domínio.** As URLs absolutas apontam para
+      `https://breno-helf.github.io/certek-landing`, que é onde o site está
+      publicado hoje. Quando `certek.com.br` passar a servir esta página, é um
+      find-and-replace nos dois HTMLs, no `robots.txt`, no `sitemap.xml` e no
+      `llms.txt`.
+- [ ] **CNPJ e registros** (CNPJ, inscrição municipal, registro no CREA-SP e
+      responsável técnico). É o maior ganho por menor esforço da lista: sem
+      CNPJ, um comprador não consegue nem abrir cadastro de fornecedor a partir
+      do site, e o CNPJ é o identificador mais forte que existe para
+      desambiguar a empresa em qualquer grafo de entidades.
+- [ ] **Ficha técnica das 4 obras** (cidade/UF, ano, área construída, tipo de
+      contrato) e autorização de citação por cliente. Destrava uma linha de
+      dados em cada card e o `ItemList` do JSON-LD.
+- [ ] **Obra farmacêutica divulgável.** Há 7 logos de farma no mural e nenhuma
+      obra farmacêutica entre os 4 cards — é a maior lacuna num shortlist farma.
+- [ ] **Recorrência.** Quais clientes contrataram mais de uma vez. É o sinal
+      mais forte do setor e hoje nenhum logo prova.
+- [ ] **LEED nomeado.** A página afirma especialidade em obra LEED sem nomear
+      uma obra; o USGBC mantém diretório público, então uma obra citada se
+      verifica em dois minutos.
 
 Resolvidos: LinkedIn (`linkedin.com/company/certek-construtora`, no header, no
 rodapé e no `sameAs` do JSON-LD) e ano de fundação (2012, no tile de "Números",

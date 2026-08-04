@@ -3,19 +3,21 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://certek.com.br/</loc>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://certek.com.br/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://certek.com.br/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://certek.com.br/"/>
+    <loc>https://breno-helf.github.io/certek-landing/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://breno-helf.github.io/certek-landing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://breno-helf.github.io/certek-landing/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://breno-helf.github.io/certek-landing/"/>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://certek.com.br/en/</loc>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://certek.com.br/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://certek.com.br/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://certek.com.br/"/>
+    <loc>https://breno-helf.github.io/certek-landing/en/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://breno-helf.github.io/certek-landing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://breno-helf.github.io/certek-landing/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://breno-helf.github.io/certek-landing/"/>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>

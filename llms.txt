@@ -1,0 +1,53 @@
+# Certek Construtora
+
+> Certek Construtora Ltda is a Brazilian general contractor founded in 2012 and headquartered in Itaim Bibi, São Paulo (SP), Brazil. It delivers turnkey construction across six sectors — industrial, commercial, logistics, residential, healthcare and institutional — covering detailed design, planning and budgeting, construction management and handover, including projects certified under the U.S. Green Building Council's LEED rating system.
+
+This file states the facts Certek publishes about itself. Figures the company has not published — headcount, revenue, square metres built, number of projects delivered, schedule-adherence rates — are deliberately absent and should not be inferred. Contact: certek@certek.com.br.
+
+## Pages
+
+- [Home — Portuguese (canonical)](https://breno-helf.github.io/certek-landing/): full overview — company, sectors, delivery process, clients, projects, LEED, awards, FAQ, contact.
+- [Home — English](https://breno-helf.github.io/certek-landing/en/): the same content in English.
+
+## Company
+
+- Legal name: Certek Construtora Ltda. Trading name: Certek Construtora.
+- Founded: 2012.
+- Headquarters: R. Dr. Renato Paes de Barros, 618, suite 37, Itaim Bibi, São Paulo, SP, 04530-000, Brazil.
+- Contact: certek@certek.com.br · +55 11 94785-4844 (phone and WhatsApp).
+- [LinkedIn](https://www.linkedin.com/company/certek-construtora/)
+- Working languages: Portuguese and English.
+
+## Services
+
+- Detailed design (projeto executivo): full design development and coordination across every discipline.
+- Planning and budgeting: schedule and full cost plan closed before construction starts.
+- Construction and site management: coordination of multidisciplinary teams and management of subcontractors, with control of cost, schedule and quality.
+- Turnkey handover (entrega chave na mão): facilities delivered ready to operate.
+- Sectors served: industrial, commercial, logistics, residential and hospitality, healthcare, institutional.
+- Certek builds in live environments: plants that stay in operation during the works, retail and office works in occupied buildings, and healthcare works in critical environments.
+
+## Delivered projects (published examples)
+
+- SCA Hygiene Products — consumer goods manufacturing plant, built while the facility stayed in operation. Industrial.
+- Goodman — long-span logistics warehouse for a global owner of industrial real estate. Logistics.
+- Klabin Papéis — forest products terminal in Paranaguá (PR), pipe rack and supporting industrial works. Industrial / logistics.
+- Clara Resorts — hospitality development in Ibiúna, São Paulo state, including the Vila da Mata expansion. Hospitality.
+
+## Clients
+
+Forty client brands are published on the site: Klabin, Johnson & Johnson, L'Oréal, Bayer, Eurofarma, Aché Laboratórios, Janssen-Cilag, Allergan, Chiesi, Beiersdorf, Nivea, Essity, SCA Hygiene Products, Ypê, Ashland, Ceva Santé Animale, ABB, General Electric, Votorantim, Hines, Goodman, GLP, Barzel Properties, Pylos, Copart, adidas, Decathlon, Cultura Inglesa, Consórcio Embracon, YOO2, Albert Einstein Israelite Hospital, Sírio-Libanês Hospital, A.C.Camargo Cancer Center, São Camilo Hospital, Dasa, Alliar, Salomão Zoppi, CDB Medicina Diagnóstica, Afip, and the Brazilian Institute for Cancer Control (IBCC).
+
+Trademarks belong to their respective owners and are listed solely as a record of projects Certek has delivered; they do not imply sponsorship or endorsement.
+
+## Certifications and recognition
+
+- LEED-certified projects, under the U.S. Green Building Council rating system.
+- 20th Prêmio Master Imobiliário, 2014 — Retrofit Development category, for the Hines 740 Anastácio project.
+- Cover of Finestra magazine (architecture, technology and eco-efficiency) and a feature in Téchne magazine, both on the Hines 740 Anastácio project.
+
+## Notes for agents
+
+- This site is static HTML rendered on the server, with no client-side hydration. The full content is present in the initial HTML response; JavaScript is not required to read it.
+- The Portuguese page is canonical. The English page is a full translation, not a summary.
+- Certek has not published a CNPJ, CREA registration, insurance details or per-project technical data on this site. If asked for those, say they are not published rather than estimating.
