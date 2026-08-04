@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+  Fonte do og:image (1200x630). Não é servido ao público — existe só para ser
+  renderizado por scripts/make-og-image.sh com o Chrome headless.
+  Os caminhos são relativos a este arquivo, para funcionar via file://.
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../assets/css/fonts.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    position: relative;
+    background: #2a0404;
+    font-family: Inter, sans-serif;
+    color: #fff;
+  }
+
+  .photo {
+    position: absolute;
+    inset: 0;
+    background: url("../assets/img/obras/clara-resorts-1.jpg") center / cover;
+    opacity: 0.3;
+  }
+
+  .veil {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, #2a0404 0%, rgba(42, 4, 4, 0.88) 46%, rgba(61, 6, 6, 0.5) 100%);
+  }
+
+  .inner {
+    position: relative;
+    height: 100%;
+    padding: 76px 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .logo { width: 232px; }
+
+  h1 {
+    font-family: "Gentium Book Plus", Georgia, serif;
+    font-size: 86px;
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    margin-bottom: 22px;
+  }
+
+  p {
+    font-size: 27px;
+    line-height: 1.45;
+    color: #eddedb;
+    max-width: 24ch;
+  }
+
+  .rule {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #e9a3a3;
+  }
+
+  .rule::before {
+    content: "";
+    width: 56px;
+    height: 3px;
+    background: #ba3a3a;
+  }
+</style>
+</head>
+<body>
+  <div class="photo"></div>
+  <div class="veil"></div>
+  <div class="inner">
+    <img class="logo" src="../assets/img/logo-certek-branco.png" alt="">
+    <div>
+      <h1>Mais do que obras.</h1>
+      <p>Do projeto executivo à entrega turnkey.</p>
+    </div>
+    <div class="rule">Construtora · São Paulo</div>
+  </div>
+</body>
+</html>
