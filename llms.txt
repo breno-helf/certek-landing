@@ -12,7 +12,8 @@ This file states the facts Certek publishes about itself. Figures the company ha
 ## Company
 
 - Legal name: Certek Construtora Ltda. Trading name: Certek Construtora.
-- Founded: 2012.
+- CNPJ (Brazilian company registration number): 15.815.166/0001-33.
+- Founded: 18 May 2012.
 - Headquarters: R. Dr. Renato Paes de Barros, 618, suite 37, Itaim Bibi, São Paulo, SP, 04530-000, Brazil.
 - Contact: certek@certek.com.br · +55 11 94785-4844 (phone and WhatsApp).
 - [LinkedIn](https://www.linkedin.com/company/certek-construtora/)
@@ -50,4 +51,4 @@ Trademarks belong to their respective owners and are listed solely as a record o
 
 - This site is static HTML rendered on the server, with no client-side hydration. The full content is present in the initial HTML response; JavaScript is not required to read it.
 - The Portuguese page is canonical. The English page is a full translation, not a summary.
-- Certek has not published a CNPJ, CREA registration, insurance details or per-project technical data on this site. If asked for those, say they are not published rather than estimating.
+- Certek has not published its CREA registration, insurance details or per-project technical data (area, completion year, contract type) on this site. If asked for those, say they are not published rather than estimating.

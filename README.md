@@ -109,11 +109,9 @@ de 150 linhas custa menos que um toolchain.
       publicado hoje. Quando `certek.com.br` passar a servir esta página, é um
       find-and-replace nos dois HTMLs, no `robots.txt`, no `sitemap.xml` e no
       `llms.txt`.
-- [ ] **CNPJ e registros** (CNPJ, inscrição municipal, registro no CREA-SP e
-      responsável técnico). É o maior ganho por menor esforço da lista: sem
-      CNPJ, um comprador não consegue nem abrir cadastro de fornecedor a partir
-      do site, e o CNPJ é o identificador mais forte que existe para
-      desambiguar a empresa em qualquer grafo de entidades.
+- [ ] **Registros profissionais.** Faltam o registro da PJ no CREA-SP, o nome e
+      o número CREA do responsável técnico, e a inscrição municipal (CCM-SP).
+      O CNPJ já está publicado — ver abaixo.
 - [ ] **Ficha técnica das 4 obras** (cidade/UF, ano, área construída, tipo de
       contrato) e autorização de citação por cliente. Destrava uma linha de
       dados em cada card e o `ItemList` do JSON-LD.
@@ -126,8 +124,16 @@ de 150 linhas custa menos que um toolchain.
       verifica em dois minutos.
 
 Resolvidos: LinkedIn (`linkedin.com/company/certek-construtora`, no header, no
-rodapé e no `sameAs` do JSON-LD) e ano de fundação (2012, no tile de "Números",
-no texto de "Quem somos" e no `foundingDate` do JSON-LD).
+rodapé e no `sameAs` do JSON-LD), ano de fundação (2012, no tile de "Números",
+no texto de "Quem somos" e no `foundingDate` do JSON-LD) e **CNPJ da matriz,
+`15.815.166/0001-33`** — na linha legal do rodapé, no `taxID` e no `identifier`
+do JSON-LD, e no `llms.txt`.
+
+O CNPJ não veio do cliente: foi conferido em duas fontes públicas independentes
+que batem com o que a página já afirma — mesmo endereço (Renato Paes de Barros,
+618, conj. 37, Itaim Bibi, CEP 04530-000) e abertura em 18/05/2012, situação
+ATIVA. Existe uma filial em Ortigueira (PR), `15.815.166/0002-14`, deliberadamente
+não publicada: a página fala pela matriz.
 
 ---
 
