@@ -1392,6 +1392,26 @@ main:focus {
   }
 }
 
+/* Faixa apertada: o menu já está inteiro na barra (o hamburguer só entra abaixo
+   de 900px), mas seis itens em português — "Trabalhe conosco" é longo — mais
+   marca, idioma, LinkedIn e o botão não cabem. Nesta faixa o botão sai: o CTA
+   do herói está logo abaixo, visível sem rolar. Ele volta a partir de 1150px e
+   reaparece na barra do mobile, onde é a única ação à mão. */
+@media (min-width: 901px) and (max-width: 1149px) {
+  .site-header__cta {
+    display: none;
+  }
+
+  .nav,
+  .nav__list {
+    gap: 1rem;
+  }
+
+  .nav__link {
+    font-size: 0.875rem;
+  }
+}
+
 @media (max-width: 900px) {
   .grid--3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
