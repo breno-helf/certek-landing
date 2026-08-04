@@ -24,7 +24,7 @@ NOMES = {
     "2-5": "salomao-zoppi",
     "2-6": "general-electric",
     # tira 3 — varejo, hotelaria e incorporação
-    "3-1": "ecm5",
+    # "3-1": "ecm5"  -> removido a pedido da Certek
     "3-2": "pylos-yoo2",
     "3-3": "cultura-inglesa",
     "3-4": "embracon",
@@ -42,7 +42,7 @@ NOMES = {
     "5-2": "sca",
     "5-3": "ype",
     "5-4": "ceva",
-    "5-5": "cba",
+    # "5-5": "cba"  -> removido a pedido da Certek
     "5-6": "votorantim",
     # tira 12 — indústria e cosméticos
     "12-1": "klabin",

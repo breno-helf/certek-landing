@@ -39,7 +39,7 @@ assets/
   js/site.js            menu mobile, reveal, fallback do formulário
   img/                  logo, favicons, og:image
   img/obras/            fotos das obras
-  img/clientes/logos/   42 logos de clientes, recortados das tiras originais
+  img/clientes/logos/   40 logos de clientes, recortados das tiras originais
 scripts/                utilitários (ver abaixo)
 reference/              material de origem — não é servido
 robots.txt · sitemap.xml
@@ -107,12 +107,12 @@ no texto de "Quem somos" e no `foundingDate` do JSON-LD).
 
 - **Nada inventado.** Não há headcount, m² construídos nem faturamento. Os
   quatro números da seção "Números" ou são contáveis a partir do material
-  público — 42 logos exibidos → "40+ clientes"; 6 segmentos; 3 obras em
-  andamento (Clara Resorts, Hines, Yamaha) — ou foram informados pela Certek
+  público — 40 logos exibidos → "40 clientes"; 6 segmentos; 2 obras em
+  andamento (Hines e Yamaha) — ou foram informados pela Certek
   (fundação em 2012).
 - **Zero dado financeiro.** Os números do ERP Sienge que existem em
   `../certek-streamlit/` são internos e não aparecem aqui.
-- **Só clientes já públicos.** Todos os 42 logos vêm das tiras que a própria
+- **Só clientes já públicos.** Todos os 40 logos vêm das tiras que a própria
   Certek já publica em `certek.com.br`. Nomes que aparecem apenas no ERP interno
   não foram adicionados.
 - **Marcas de terceiros** são exibidas apenas como registro de obras
