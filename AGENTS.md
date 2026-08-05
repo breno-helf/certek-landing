@@ -29,9 +29,14 @@ o venv do diretório pai) que roda uma vez e grava o resultado no repositório.
 
 Esta página fala em nome de uma empresa real, para clientes reais. É proibido
 acrescentar: ano de fundação diferente de 2012, número de funcionários, m²
-construídos, faturamento, número total de obras entregues, percentual de prazo
-cumprido, tempo de resposta prometido, certificações ISO, apólices de seguro, ou
-qualquer cliente que já não esteja na página.
+construídos, faturamento, percentual de prazo cumprido, tempo de resposta
+prometido, certificações ISO, apólices de seguro, ou qualquer cliente que já
+não esteja na página.
+
+Dois números foram fornecidos pela própria Certek (feedback de 05/08/2026) e
+podem permanecer exatamente como estão: **+240 projetos entregues** e **+4
+obras certificadas LEED**. Não os recalcule, não os arredonde e não os
+"atualize" sem nova confirmação da Certek.
 
 Se uma mudança ficaria melhor com um dado desses, **deixe um TODO e diga o que
 precisa ser perguntado à Certek** — não estime, não arredonde, não infira a

@@ -1,9 +1,10 @@
 /* Certek — comportamento da página.
  *
- * Três coisas apenas:
+ * Quatro coisas apenas:
  *   1. menu mobile
  *   2. animação de entrada das seções
  *   3. fallback do formulário enquanto não existe endpoint
+ *   4. filtro por segmento e caixa de detalhes das obras
  *
  * Tudo aqui é progressivo: com JS desativado a página continua completa e
  * navegável, e os canais de contato diretos continuam clicáveis.
@@ -199,6 +200,99 @@
         .then(function () {
           if (button) button.disabled = false;
         });
+    });
+  }
+
+  /* -------------------------------------------- obras: filtro e detalhes -- */
+
+  var workCards = Array.prototype.slice.call(document.querySelectorAll(".works .work"));
+
+  // Filtro por segmento. A barra nasce com hidden no HTML: sem JS ela não
+  // aparece e todas as obras ficam visíveis — nada depende daqui para existir.
+  var worksFilter = document.querySelector("[data-works-filter]");
+
+  if (worksFilter && workCards.length) {
+    worksFilter.hidden = false;
+
+    worksFilter.addEventListener("click", function (event) {
+      var botao = event.target.closest("[data-filter]");
+      if (!botao) return;
+      var filtro = botao.getAttribute("data-filter");
+
+      Array.prototype.forEach.call(
+        worksFilter.querySelectorAll("[data-filter]"),
+        function (b) {
+          b.setAttribute("aria-pressed", String(b === botao));
+        }
+      );
+
+      workCards.forEach(function (card) {
+        var segmentos = (card.getAttribute("data-segments") || "").split(/\s+/);
+        card.hidden = filtro !== "all" && segmentos.indexOf(filtro) === -1;
+      });
+    });
+  }
+
+  // Caixa de detalhes. O conteúdo vem do próprio card (sector, título, texto)
+  // mais as fotos listadas em data-gallery; o <dialog> cuida de foco e Esc.
+  var workModal = document.getElementById("work-modal");
+
+  if (workModal && typeof workModal.showModal === "function" && workCards.length) {
+    var modalSector = document.getElementById("work-modal-sector");
+    var modalTitle = document.getElementById("work-modal-title");
+    var modalText = document.getElementById("work-modal-text");
+    var modalGallery = document.getElementById("work-modal-gallery");
+
+    var abreDetalhes = function (card) {
+      var sector = card.querySelector(".work__sector");
+      var titulo = card.querySelector("h3");
+      var texto = card.querySelector(".work__body p:not(.work__sector)");
+      modalSector.textContent = sector ? sector.textContent : "";
+      modalTitle.textContent = titulo ? titulo.textContent : "";
+      modalText.textContent = texto ? texto.textContent : "";
+
+      modalGallery.textContent = "";
+      (card.getAttribute("data-gallery") || "").split(",").forEach(function (caminho) {
+        caminho = caminho.trim();
+        if (!caminho) return;
+        var img = document.createElement("img");
+        img.src = caminho;
+        // decorativas: a informação (título, setor, descrição) já está no texto
+        img.alt = "";
+        img.loading = "lazy";
+        img.decoding = "async";
+        modalGallery.appendChild(img);
+      });
+
+      workModal.showModal();
+    };
+
+    // Trava a rolagem do fundo enquanto a caixa está aberta. Observar o
+    // atributo open (em vez do evento "close") cobre qualquer forma de
+    // fechar — X, backdrop, Esc ou close() — mesmo onde o evento não chega.
+    new MutationObserver(function () {
+      document.body.style.overflow = workModal.open ? "hidden" : "";
+    }).observe(workModal, { attributes: true, attributeFilter: ["open"] });
+
+    workCards.forEach(function (card) {
+      var botao = card.querySelector("[data-work-more]");
+      if (!botao) return;
+      botao.hidden = false;
+      botao.addEventListener("click", function () {
+        abreDetalhes(card);
+      });
+    });
+
+    workModal.addEventListener("click", function (event) {
+      // clique no backdrop (o alvo é o próprio dialog), no X, ou num link
+      // interno (ex.: "fale com a Certek" leva ao contato) — tudo fecha
+      if (
+        event.target === workModal ||
+        event.target.closest("[data-modal-close]") ||
+        event.target.closest("a")
+      ) {
+        workModal.close();
+      }
     });
   }
 })();

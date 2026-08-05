@@ -2,13 +2,13 @@
 
 > Certek Construtora Ltda is a Brazilian general contractor founded in 2012 and headquartered in Itaim Bibi, São Paulo (SP), Brazil. It delivers turnkey construction across six sectors — industrial, commercial, logistics, residential, healthcare and institutional — covering detailed design, planning and budgeting, construction management and handover, including projects certified under the U.S. Green Building Council's LEED rating system.
 
-This file states the facts Certek publishes about itself. Figures the company has not published — headcount, revenue, square metres built, number of projects delivered, schedule-adherence rates — are deliberately absent and should not be inferred. Contact: certek@certek.com.br.
+This file states the facts Certek publishes about itself. Figures the company has not published — headcount, revenue, square metres built, schedule-adherence rates — are deliberately absent and should not be inferred. Contact: certek@certek.com.br.
 
 ## Pages
 
 - [Home — Portuguese (canonical)](https://breno-helf.github.io/certek-landing/): full overview — company, sectors, delivery process, clients, projects, LEED, awards, FAQ, contact.
 - [Home — English](https://breno-helf.github.io/certek-landing/en/): the same content in English.
-- [Careers — Portuguese](https://breno-helf.github.io/certek-landing/trabalhe-conosco/): how to apply, roles Certek has advertised, and the official application channels.
+- [Careers — Portuguese](https://breno-helf.github.io/certek-landing/carreiras/): how to apply, roles Certek has advertised, and the official application channels.
 - [Careers — English](https://breno-helf.github.io/certek-landing/en/careers/): the same in English.
 
 ## Company
@@ -16,6 +16,7 @@ This file states the facts Certek publishes about itself. Figures the company ha
 - Legal name: Certek Construtora Ltda. Trading name: Certek Construtora.
 - CNPJ (Brazilian company registration number): 15.815.166/0001-33.
 - Founded: 18 May 2012.
+- More than 240 projects delivered and more than 4 LEED-certified projects (figures published by Certek, August 2026).
 - Headquarters: R. Dr. Renato Paes de Barros, 618, suite 37, Itaim Bibi, São Paulo, SP, 04530-000, Brazil.
 - Contact: certek@certek.com.br · +55 11 94785-4844 (phone and WhatsApp).
 - [LinkedIn](https://www.linkedin.com/company/certek-construtora/)
@@ -26,7 +27,7 @@ This file states the facts Certek publishes about itself. Figures the company ha
 - Detailed design (projeto executivo): full design development and coordination across every discipline.
 - Planning and budgeting: schedule and full cost plan closed before construction starts.
 - Construction and site management: coordination of multidisciplinary teams and management of subcontractors, with control of cost, schedule and quality.
-- Turnkey handover (entrega chave na mão): facilities delivered ready to operate.
+- Handover and post-construction: facilities delivered ready to operate, under a range of contracting models, including turnkey (entrega chave na mão).
 - Sectors served: industrial, commercial, logistics, residential and hospitality, healthcare, institutional.
 - Certek builds in live environments: plants that stay in operation during the works, retail and office works in occupied buildings, and healthcare works in critical environments.
 
@@ -39,7 +40,7 @@ This file states the facts Certek publishes about itself. Figures the company ha
 
 ## Clients
 
-Forty client brands are published on the site: Klabin, Johnson & Johnson, L'Oréal, Bayer, Eurofarma, Aché Laboratórios, Janssen-Cilag, Allergan, Chiesi, Beiersdorf, Nivea, Essity, SCA Hygiene Products, Ypê, Ashland, Ceva Santé Animale, ABB, General Electric, Votorantim, Hines, Goodman, GLP, Barzel Properties, Pylos, Copart, adidas, Decathlon, Cultura Inglesa, Consórcio Embracon, YOO2, Albert Einstein Israelite Hospital, Sírio-Libanês Hospital, A.C.Camargo Cancer Center, São Camilo Hospital, Dasa, Alliar, Salomão Zoppi, CDB Medicina Diagnóstica, Afip, and the Brazilian Institute for Cancer Control (IBCC).
+More than forty client brands are published on the site: Klabin, Johnson & Johnson, L'Oréal, Bayer, Eurofarma, Aché Laboratórios, Janssen-Cilag, Allergan, Chiesi, Beiersdorf, Nivea, Essity, SCA Hygiene Products, Ypê, Ashland, Ceva Santé Animale, ABB, General Electric, Votorantim, Hines, Goodman, GLP, Barzel Properties, Pylos, Copart, adidas, Decathlon, Cultura Inglesa, Consórcio Embracon, YOO2, Clara Resorts, Albert Einstein Israelite Hospital, Sírio-Libanês Hospital, A.C.Camargo Cancer Center, São Camilo Hospital, Dasa, Alliar, Salomão Zoppi, CDB Medicina Diagnóstica, Afip, and the Brazilian Institute for Cancer Control (IBCC).
 
 Trademarks belong to their respective owners and are listed solely as a record of projects Certek has delivered; they do not imply sponsorship or endorsement.
 

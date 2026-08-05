@@ -30,7 +30,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 # é a única coisa que o checador precisa saber para passar a vigiá-la.
 PARES = [
     ("home", ROOT / "index.html", ROOT / "en/index.html"),
-    ("trabalhe-conosco", ROOT / "trabalhe-conosco/index.html", ROOT / "en/careers/index.html"),
+    ("carreiras", ROOT / "carreiras/index.html", ROOT / "en/careers/index.html"),
 ]
 
 # Chaves cujo texto pode legitimamente ser idêntico nos dois idiomas
@@ -45,6 +45,7 @@ IGUAIS_OK = {
     "works.sca.title",
     "works.goodman.title",
     "segment.industrial.title",
+    "works.filter.industrial",
     "works.sca.sector",
     "awards.press",
     "careers.apply.emaillink",
@@ -143,6 +144,7 @@ def confere(rotulo: str, PT: pathlib.Path, EN: pathlib.Path) -> tuple[list[str],
             if n > 1 and not chave.startswith("nav.") and chave not in {
                 "works.status.done",
                 "works.status.live",
+                "works.more",
                 "awards.press",
                 "careers.cta2",
             }:

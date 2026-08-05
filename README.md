@@ -32,7 +32,8 @@ favicon, sem dados estruturados, e todo o conteúdo preso a um CMS de terceiros.
 ```
 index.html              página em português (canônica em /)
 en/index.html           página em inglês (/en/)
-trabalhe-conosco/       página de carreiras em português
+carreiras/              página de carreiras em português
+trabalhe-conosco/       stub de redirect para /carreiras/ (rota antiga)
 en/careers/             página de carreiras em inglês
 assets/
   css/site.css          folha única — tokens, componentes, responsivo
@@ -123,6 +124,21 @@ de 150 linhas custa menos que um toolchain.
       dados em cada card e o `ItemList` do JSON-LD.
 - [ ] **Obra farmacêutica divulgável.** Há 7 logos de farma no mural e nenhuma
       obra farmacêutica entre os 4 cards — é a maior lacuna num shortlist farma.
+- [ ] **Logos que faltam no mural** (feedback da Certek, 05/08/2026): Bosch,
+      Yamaha, Farmarin, ECM5 e CMPC. Precisamos dos arquivos de logo (ou das
+      tiras atualizadas do site antigo). Clara Resorts já entrou, recortado de
+      `reference/clara-resorts-logo.png`.
+- [ ] **Logo da GLP desatualizado.** Segundo a Certek, a GLP foi adquirida
+      recentemente pela Marq Logistics e o logo exibido é o antigo. Falta o
+      arquivo do logo novo para substituir `assets/img/clientes/logos/glp.png`.
+- [ ] **Facebook e Compliance.** O feedback pede link do Facebook e link de
+      Compliance na seção de contato. Faltam a URL da página no Facebook e a
+      página (ou documento) de Compliance. O LinkedIn já está no contato.
+- [ ] **Obras para os demais filtros de segmento.** O feedback pede botões de
+      filtro por segmento (industrial, farmacêutico, automotivo, hospitalar,
+      celulose, logístico…). Os botões existem para os segmentos que têm card
+      (industrial, logística, hotelaria); os demais dependem de obra divulgável
+      com foto e autorização do cliente.
 - [ ] **Recorrência.** Quais clientes contrataram mais de uma vez. É o sinal
       mais forte do setor e hoje nenhum logo prova.
 - [ ] **LEED nomeado.** A página afirma especialidade em obra LEED sem nomear
@@ -146,11 +162,14 @@ não publicada: a página fala pela matriz.
 ## Regras que a página segue
 
 - **Nada inventado.** Não há headcount, m² construídos nem faturamento. Os
-  quatro tiles da seção "Números" são: **2012** (fundação, confirmada pela
-  Certek e pelo registro público), **40** (contável — são 40 logos exibidos),
-  **6** (contável — são 6 segmentos com card próprio) e **LEED** (afirmação já
-  publicada, sem número). O tile "obras em andamento" foi retirado por ser o
-  único que envelhecia sozinho em dois arquivos sem data na página.
+  cinco tiles da seção "Números" são: **2012** (fundação, confirmada pela
+  Certek e pelo registro público), **+240 projetos entregues** (número
+  informado pela própria Certek no feedback de 05/08/2026 — não veio do ERP e
+  não deve ser "atualizado" sem nova confirmação), **+40** (contável — são 41
+  logos exibidos), **6** (contável — são 6 segmentos com card próprio) e
+  **LEED, +4 obras certificadas** (o "+4" também veio do feedback da Certek de
+  05/08/2026). O tile "obras em andamento" foi retirado por ser o único que
+  envelhecia sozinho em dois arquivos sem data na página.
   O LinkedIn da Certek declara 51–200 funcionários; a regra de não publicar
   headcount vale mesmo assim, inclusive na página de carreiras.
 - **Zero dado financeiro.** Os números do ERP Sienge que existem em
