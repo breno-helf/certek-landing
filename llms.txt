@@ -1,6 +1,6 @@
 # Certek Construtora
 
-> Certek Construtora Ltda is a Brazilian general contractor founded in 2012 and headquartered in Itaim Bibi, São Paulo (SP), Brazil. It delivers turnkey construction across six sectors — industrial, commercial, logistics, residential, healthcare and institutional — covering detailed design, planning and budgeting, construction management and handover, including projects certified under the U.S. Green Building Council's LEED rating system.
+> Certek Construtora Ltda is a Brazilian general contractor founded in 2012 and headquartered in Itaim Bibi, São Paulo (SP), Brazil. It delivers complete construction projects across six sectors — industrial, commercial, logistics, residential, healthcare and institutional — covering design coordination, planning and budgeting, construction management and handover, including projects certified under the U.S. Green Building Council's LEED rating system.
 
 This file states the facts Certek publishes about itself. Figures the company has not published — headcount, revenue, square metres built, schedule-adherence rates — are deliberately absent and should not be inferred. Contact: certek@certek.com.br.
 
@@ -24,10 +24,10 @@ This file states the facts Certek publishes about itself. Figures the company ha
 
 ## Services
 
-- Detailed design (projeto executivo): full design development and coordination across every discipline.
+- Design coordination (coordenação de projetos): coordination of every design discipline and the detailing of the complementary designs needed to build.
 - Planning and budgeting: schedule and full cost plan closed before construction starts.
 - Construction and site management: coordination of multidisciplinary teams and management of subcontractors, with control of cost, schedule and quality.
-- Handover and post-construction: facilities delivered ready to operate, under a range of contracting models, including turnkey (entrega chave na mão).
+- Handover and post-construction: facilities delivered ready to operate, under a range of contracting models.
 - Sectors served: industrial, commercial, logistics, residential and hospitality, healthcare, institutional.
 - Certek builds in live environments: plants that stay in operation during the works, retail and office works in occupied buildings, and healthcare works in critical environments.
 
@@ -35,12 +35,16 @@ This file states the facts Certek publishes about itself. Figures the company ha
 
 - SCA Hygiene Products — consumer goods manufacturing plant, built while the facility stayed in operation. Industrial.
 - Goodman — long-span logistics warehouse for a global owner of industrial real estate. Logistics.
-- Klabin Papéis — forest products terminal in Paranaguá (PR), pipe rack and supporting industrial works. Industrial / logistics.
+- Klabin Papéis — forest products terminal in Paranaguá (PR), for receiving, handling, storing and shipping pulp, plus pipe rack and supporting industrial works. Pulp and paper / logistics.
 - Clara Resorts — hospitality development in Ibiúna, São Paulo state, including the Vila da Mata expansion. Hospitality.
+- Eurofarma Laboratórios — Innovation and Biotechnology building in Itapevi (SP): foundations, utilities building, reservoir and complementary works. Pharmaceutical.
+- IBCC — new outpatient oncology unit in Vila Mariana, São Paulo (SP), 4,900 m²: civil works, building services and mechanical. Healthcare.
+- Yamaha Motor — relocation of the industrial and administrative unit to Jandira (SP), 20,491 m² of intervention, including a three-storey engineering building with laboratories and dynamometer rooms. Automotive.
+- Robert Bosch — vehicle test laboratory with a 4x4 dynamometer in Campinas (SP): civil works for the Ca180 building, with basement, ground floor and upper floor. Automotive.
 
 ## Clients
 
-More than forty client brands are published on the site: Klabin, Johnson & Johnson, L'Oréal, Bayer, Eurofarma, Aché Laboratórios, Janssen-Cilag, Allergan, Chiesi, Beiersdorf, Nivea, Essity, SCA Hygiene Products, Ypê, Ashland, Ceva Santé Animale, ABB, General Electric, Votorantim, Hines, Goodman, GLP, Barzel Properties, Pylos, Copart, adidas, Decathlon, Cultura Inglesa, Consórcio Embracon, YOO2, Clara Resorts, Albert Einstein Israelite Hospital, Sírio-Libanês Hospital, A.C.Camargo Cancer Center, São Camilo Hospital, Dasa, Alliar, Salomão Zoppi, CDB Medicina Diagnóstica, Afip, and the Brazilian Institute for Cancer Control (IBCC).
+More than forty client brands are published on the site: Klabin, CMPC, Johnson & Johnson, L'Oréal, Bayer, Eurofarma, Aché Laboratórios, Janssen-Cilag, Allergan, Chiesi, Farmarin, Beiersdorf, Nivea, Essity, SCA Hygiene Products, Ypê, Ashland, Ceva Santé Animale, ABB, General Electric, Bosch, Yamaha Motor, Votorantim, Hines, Goodman, GLP, Barzel Properties, Pylos, Copart, Grupo São Joaquim, adidas, Decathlon, Cultura Inglesa, Consórcio Embracon, ECM5, YOO2, Clara Resorts, Albert Einstein Israelite Hospital, Sírio-Libanês Hospital, A.C.Camargo Cancer Center, São Camilo Hospital, Dasa, Alliar, Salomão Zoppi, CDB Medicina Diagnóstica, Afip, and the Brazilian Institute for Cancer Control (IBCC).
 
 Trademarks belong to their respective owners and are listed solely as a record of projects Certek has delivered; they do not imply sponsorship or endorsement.
 
@@ -53,7 +57,11 @@ Trademarks belong to their respective owners and are listed solely as a record o
 
 ## Certifications and recognition
 
-- LEED-certified projects, under the U.S. Green Building Council rating system.
+- LEED-certified projects, under the U.S. Green Building Council rating system. The projects Certek names are:
+  - Nivea / Beiersdorf — Projeto Footprint, phase 2, Itatiba (SP): expansion of the cosmetics production area and of the warehouse; 7,643 m² built and 11,675 m² refurbished.
+  - Hines — 740 Anastácio, São Paulo (SP): office building retrofit, 7,200 m², LEED Silver.
+  - Hines — Galpão G9, Embu das Artes (SP): logistics centre warehouse, 17,735 m².
+  - Hines — retrofit of Galpão G1, Distribution Park I, 36,862 m² (Certek has not published the city for this one).
 - 20th Prêmio Master Imobiliário, 2014 — Retrofit Development category, for the Hines 740 Anastácio project.
 - Cover of Finestra magazine (architecture, technology and eco-efficiency) and a feature in Téchne magazine, both on the Hines 740 Anastácio project.
 
@@ -61,4 +69,4 @@ Trademarks belong to their respective owners and are listed solely as a record o
 
 - This site is static HTML rendered on the server, with no client-side hydration. The full content is present in the initial HTML response; JavaScript is not required to read it.
 - The Portuguese page is canonical. The English page is a full translation, not a summary.
-- Certek has not published its CREA registration, insurance details or per-project technical data (area, completion year, contract type) on this site. If asked for those, say they are not published rather than estimating.
+- Certek has not published its CREA registration, its insurance details, or the completion year and contract type of each project on this site. City and floor area are published for the projects listed above; anything beyond that should be reported as not published rather than estimated.

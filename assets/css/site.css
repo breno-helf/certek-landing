@@ -31,6 +31,12 @@
   --line-field: #8c8178;
   --line-dark: rgba(255, 255, 255, 0.16);
 
+  /* Verde do WhatsApp escurecido até passar em contraste: o verde oficial
+     (#25d366) dá 1,7:1 sobre branco e não serve para texto nem para borda.
+     #0a6b5c sobre --sand = 5,7:1 (AA); branco sobre #0a6b5c = 6,3:1. */
+  --whatsapp: #0a6b5c;
+  --whatsapp-deep: #085346;
+
   /* Tipografia */
   --font-display: "Gentium Book Plus", Georgia, "Times New Roman", serif;
   --font-body: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -325,6 +331,41 @@ main:focus {
 .btn--light:hover {
   background: #ffe9e9;
   border-color: #ffe9e9;
+}
+
+/* Botão do WhatsApp no bloco de contato: contorno verde discreto, que só
+   preenche no hover — o botão cheio da seção continua sendo o "Enviar
+   mensagem" (--wine), e dois botões sólidos ali brigariam.
+   O seletor é composto (.btn.btn--whatsapp) de propósito: dentro de .channel
+   valem `.channel a { font-weight: 500 }` e `.channel a:hover { text-decoration:
+   underline }`, que têm especificidade maior que um modificador de classe só. */
+.btn.btn--whatsapp {
+  background: transparent;
+  border-color: var(--whatsapp);
+  color: var(--whatsapp);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn.btn--whatsapp:hover,
+.btn.btn--whatsapp:focus-visible {
+  background: var(--whatsapp);
+  border-color: var(--whatsapp);
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn.btn--whatsapp:active {
+  background: var(--whatsapp-deep);
+  border-color: var(--whatsapp-deep);
+}
+
+/* o glifo acompanha o corpo do texto; flex-shrink evita que ele seja
+   espremido quando o rótulo é longo numa tela estreita */
+.btn--whatsapp svg {
+  width: 1.1em;
+  height: 1.1em;
+  flex-shrink: 0;
 }
 
 /* --------------------------------------------------------------------------
@@ -886,10 +927,14 @@ main:focus {
   color: #fff;
 }
 
+/* "Vazado": a Certek pediu mais respiro entre as obras (feedback 07/08/2026).
+   Continuam duas colunas — muda só o ar. A margem superior colapsa com o
+   margin-bottom do filtro (2rem), então 3rem aqui vale 3rem no total, não 5. */
 .works {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--sp-4);
+  gap: var(--sp-5);
+  margin-top: var(--sp-6);
 }
 
 .work {
@@ -945,7 +990,7 @@ main:focus {
 }
 
 .work__body {
-  padding: var(--sp-4) var(--sp-5) var(--sp-5);
+  padding: var(--sp-5) var(--sp-5) calc(var(--sp-5) + var(--sp-1));
 }
 
 .work__sector {
@@ -966,6 +1011,25 @@ main:focus {
   font-size: var(--fs-small);
   color: var(--ink-soft);
   margin: 0;
+}
+
+/* Ficha da obra: cidade/UF · m². Uma linha, discreta, entre o título e a
+   descrição — no card e, com o mesmo desenho, dentro do <dialog>.
+   Seletores compostos porque `.work__body p` (classe + tipo) tem
+   especificidade maior que `.work__meta` sozinho e zeraria a margem.
+   Sem white-space: nowrap de propósito: a 375px a ficha precisa poder
+   quebrar em duas linhas em vez de esticar o card. */
+.work__body .work__meta,
+.work-modal .work__meta {
+  font-size: var(--fs-micro);
+  line-height: 1.5;
+  color: var(--ink-faint);
+  letter-spacing: 0.01em;
+  margin: 0 0 var(--sp-2);
+}
+
+.work-modal .work__meta {
+  margin-bottom: var(--sp-3);
 }
 
 /* botão que abre a caixa de detalhes — só aparece com JS */
@@ -1108,9 +1172,67 @@ main:focus {
   height: 1rem;
 }
 
+/* Título da lista de obras certificadas. O `.section__lead` logo acima tem
+   `margin-bottom: 0`, então o respiro antes do título precisa vir daqui; a
+   margem de baixo fica com a `.leed__works` (que já traz margin-top).
+   Vem depois de `.section__eyebrow` no arquivo de propósito: as duas classes
+   têm a mesma especificidade e quem vence é a última declarada. */
+.leed__works-title {
+  margin: var(--sp-5) 0 0;
+}
+
+/* Lista das obras certificadas. O reset global tira o marcador nativo, então
+   o ponto é desenhado à mão para poder ficar na cor de acento do fundo escuro
+   e alinhado à primeira linha mesmo quando o item quebra em duas. */
+.leed__works {
+  display: grid;
+  gap: var(--sp-2);
+  margin-top: var(--sp-4);
+  max-width: var(--measure);
+  font-size: var(--fs-small);
+  color: #ddc9c6;
+}
+
+.leed__works li {
+  position: relative;
+  padding-left: 1.4rem;
+  line-height: 1.6;
+}
+
+.leed__works li::before {
+  content: "";
+  position: absolute;
+  left: 0.1rem;
+  /* meia entrelinha: acompanha o texto se a fonte crescer */
+  top: 0.72em;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background: #e9a3a3;
+}
+
 .awards {
   display: grid;
   gap: var(--sp-3);
+}
+
+/* Foto do 740 Anastácio (deck LEED de 07/08/2026) sob os três reconhecimentos,
+   que citam a obra. Herda a moldura dos cards de prêmio. */
+.awards__photo {
+  margin: var(--sp-4) 0 0;
+}
+
+.awards__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+}
+
+.awards__photo figcaption {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-micro);
+  color: #ddc9c6;
 }
 
 .award {
@@ -1343,6 +1465,15 @@ main:focus {
 .channel a {
   font-weight: 500;
   text-decoration: none;
+}
+
+/* No canal de telefone o número ocupa a linha inteira, para o botão do
+   WhatsApp cair na linha de baixo em vez de dividir a linha com ele (o botão
+   é inline-flex e tem 0.9rem de padding vertical: lado a lado, ele empurraria
+   o número para fora do alinhamento). */
+.channel__phone {
+  display: block;
+  margin-bottom: var(--sp-2);
 }
 
 .channel a:hover {

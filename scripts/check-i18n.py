@@ -44,6 +44,11 @@ IGUAIS_OK = {
     "works.klabin.title",
     "works.sca.title",
     "works.goodman.title",
+    # Ficha técnica dos cards: só as linhas realmente idênticas nos dois
+    # idiomas (sem separador de milhar e sem conjunção). As demais divergem
+    # de propósito: o EN usa vírgula de milhar ("23,340 m²") e "and".
+    "works.goodman.meta",
+    "works.bosch.meta",
     "segment.industrial.title",
     "works.filter.industrial",
     "works.sca.sector",

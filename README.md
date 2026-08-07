@@ -42,13 +42,19 @@ assets/
   js/site.js            menu mobile, reveal, fallback do formulário
   img/                  logo, favicons, og:image
   img/obras/            fotos das obras
-  img/clientes/logos/   40 logos de clientes, recortados das tiras originais
+  img/clientes/logos/   47 logos de clientes, recortados das tiras originais
 scripts/                utilitários (ver abaixo)
 reference/              material de origem — não é servido
 llms.txt                resumo legível por agente (padrão llmstxt.org)
 AGENTS.md               instruções para agentes de código que editarem o repo
 robots.txt · sitemap.xml
 ```
+
+O material que a Certek enviou em 07/08/2026 (os decks `.pptx` de obras, o deck
+`Experiencia Certek Leed.pptx` e o documento com a ficha técnica) **não está no
+repositório** — fica no Drive, junto com o resto do material do cliente. Do que
+veio, só os arquivos de logo foram commitados, em
+`reference/cassiano-2026-08/`, porque são a origem de imagens que o site serve.
 
 ## Scripts
 
@@ -108,9 +114,6 @@ de 150 linhas custa menos que um toolchain.
       Enquanto estiver assim, o `site.js` intercepta o envio e abre um e-mail já
       preenchido — nunca finge que enviou. Para ativar: crie um formulário no
       Formspree (ou use Netlify Forms) e troque o `action` **nos dois arquivos**.
-- [ ] **Foto do Hines — 740 Anastácio.** É a obra premiada em 2014, e a imagem
-      não é mais recuperável do CDN (o bucket `688fe0a0…` responde 403). Se a
-      Certek tiver o original, a seção de reconhecimento ganha muito.
 - [ ] **Domínio.** As URLs absolutas apontam para
       `https://breno-helf.github.io/certek-landing`, que é onde o site está
       publicado hoje. Quando `certek.com.br` passar a servir esta página, é um
@@ -119,33 +122,59 @@ de 150 linhas custa menos que um toolchain.
 - [ ] **Registros profissionais.** Faltam o registro da PJ no CREA-SP, o nome e
       o número CREA do responsável técnico, e a inscrição municipal (CCM-SP).
       O CNPJ já está publicado — ver abaixo.
-- [ ] **Ficha técnica das 4 obras** (cidade/UF, ano, área construída, tipo de
-      contrato) e autorização de citação por cliente. Destrava uma linha de
-      dados em cada card e o `ItemList` do JSON-LD.
-- [ ] **Obra farmacêutica divulgável.** Há 7 logos de farma no mural e nenhuma
-      obra farmacêutica entre os 4 cards — é a maior lacuna num shortlist farma.
-- [ ] **Logos que faltam no mural** (feedback da Certek, 05/08/2026): Bosch,
-      Yamaha, Farmarin, ECM5 e CMPC. Precisamos dos arquivos de logo (ou das
-      tiras atualizadas do site antigo). Clara Resorts já entrou, recortado de
-      `reference/clara-resorts-logo.png`.
-- [ ] **Logo da GLP desatualizado.** Segundo a Certek, a GLP foi adquirida
-      recentemente pela Marq Logistics e o logo exibido é o antigo. Falta o
-      arquivo do logo novo para substituir `assets/img/clientes/logos/glp.png`.
+- [ ] **Ficha técnica das obras: falta o ano e o tipo de contrato.** Cidade/UF e
+      área construída vieram no material de 07/08/2026 e já estão publicadas na
+      linha de dados de cada card. Ano de conclusão e regime de contratação
+      continuam sem fonte — sem eles o `ItemList` do JSON-LD fica sem data.
+- [ ] **Cidade do Galpão G1 (Hines, LEED).** O documento dá a área
+      (36.862,88 m²) e o Distribution Park I, mas não a cidade; o cliente lista
+      três endereços para a Hines (São Paulo, Cajamar e Embu das Artes). Enquanto
+      não confirmar, o card cita a obra sem cidade.
+- [ ] **Divergência na área de reforma da Nivea/Beiersdorf.** O documento diz
+      "reformar = 6.850 m²"; o deck `Experiencia Certek Leed.pptx` diz
+      "Reforma: 11.675,00 m²". A página usa o número do deck (11.675 m², o mais
+      recente). Confirmar com a Certek qual vale.
+- [ ] **Automação de resposta do WhatsApp.** Antes de divulgar mais o canal
+      (botão flutuante, campanhas), validar com o Mauro se a resposta automática
+      está funcionando — hoje o número aparece no contato e no rodapé.
+- [ ] **Migração de hosting para a LocalWeb, via FTP.** O site está hoje no
+      GitHub Pages; o find-and-replace de domínio descrito acima acontece nesse
+      momento, junto com a subida por FTP.
+- [ ] **Logo e nome do IBCC.** O arquivo enviado em 07/08/2026 é de outra
+      identidade ("ibcc oncologia", branco sobre azul sólido — viraria um bloco
+      cinza no mosaico em grayscale), então o logo antigo foi mantido. As fontes
+      também divergem no nome por extenso ("Combate" no deck, "Controle" no logo
+      atual). Confirmar com a Certek qual identidade e grafia valem.
 - [ ] **Facebook e Compliance.** O feedback pede link do Facebook e link de
       Compliance na seção de contato. Faltam a URL da página no Facebook e a
       página (ou documento) de Compliance. O LinkedIn já está no contato.
-- [ ] **Obras para os demais filtros de segmento.** O feedback pede botões de
-      filtro por segmento (industrial, farmacêutico, automotivo, hospitalar,
-      celulose, logístico…). Os botões existem para os segmentos que têm card
-      (industrial, logística, hotelaria); os demais dependem de obra divulgável
-      com foto e autorização do cliente.
 - [ ] **Recorrência.** Quais clientes contrataram mais de uma vez. É o sinal
       mais forte do setor e hoje nenhum logo prova.
-- [ ] **LEED nomeado.** A página afirma especialidade em obra LEED sem nomear
-      uma obra; o USGBC mantém diretório público, então uma obra citada se
-      verifica em dois minutos.
 
-Resolvidos: LinkedIn (`linkedin.com/company/certek-construtora`, no header, no
+Resolvidos no material de 07/08/2026:
+
+- **Foto do Hines — 740 Anastácio.** O deck `Experiencia Certek Leed.pptx`
+  trazia uma foto do átrio (699 px, máximo disponível no deck); ela está na
+  seção de reconhecimento, sob os três prêmios que citam a obra.
+
+- **Logos que faltavam no mural.** Bosch, Yamaha Motor, Farmarin, ECM5, CMPC e
+  Grupo São Joaquim entraram — o mural foi de 41 para 47 logos.
+- **Logo da GLP.** O cliente confirmou que a GLP mantém a marca clássica depois
+  da aquisição pela Marq Logistics e enviou o arquivo em 07/08/2026; o logo
+  exibido está correto.
+- **Obra farmacêutica divulgável.** A Eurofarma (Edifício de Inovação e
+  Biotecnologia, Itapevi/SP) fecha a lacuna que existia num shortlist de farma.
+- **Obras para os demais filtros de segmento.** Farmacêutico, automotivo,
+  hospitalar e celulose passaram a ter card próprio (Eurofarma, Yamaha Motor,
+  IBCC e Klabin, respectivamente).
+- **LEED nomeado.** As quatro obras LEED estão citadas na seção de
+  sustentabilidade: Nivea/Beiersdorf (Projeto Footprint fase 2, Itatiba/SP),
+  Hines 740 Anastácio (São Paulo/SP, LEED Silver), Hines Galpão G9 (Embu das
+  Artes/SP) e o retrofit do Galpão G1 (Distribution Park I).
+- **Autorização de citação por cliente.** A Certek confirmou em 07/08/2026 que
+  não há restrição para citar os clientes e as obras deste material.
+
+Resolvidos antes: LinkedIn (`linkedin.com/company/certek-construtora`, no header, no
 rodapé e no `sameAs` do JSON-LD), ano de fundação (2012, no tile de "Números",
 no texto de "Quem somos" e no `foundingDate` do JSON-LD) e **CNPJ da matriz,
 `15.815.166/0001-33`** — na linha legal do rodapé, no `taxID` e no `identifier`
@@ -165,7 +194,7 @@ não publicada: a página fala pela matriz.
   cinco tiles da seção "Números" são: **2012** (fundação, confirmada pela
   Certek e pelo registro público), **+240 projetos entregues** (número
   informado pela própria Certek no feedback de 05/08/2026 — não veio do ERP e
-  não deve ser "atualizado" sem nova confirmação), **+40** (contável — são 41
+  não deve ser "atualizado" sem nova confirmação), **+40** (contável — são 47
   logos exibidos), **6** (contável — são 6 segmentos com card próprio) e
   **LEED, +4 obras certificadas** (o "+4" também veio do feedback da Certek de
   05/08/2026). O tile "obras em andamento" foi retirado por ser o único que
@@ -174,9 +203,11 @@ não publicada: a página fala pela matriz.
   headcount vale mesmo assim, inclusive na página de carreiras.
 - **Zero dado financeiro.** Os números do ERP Sienge que existem em
   `../certek-streamlit/` são internos e não aparecem aqui.
-- **Só clientes já públicos.** Todos os 40 logos vêm das tiras que a própria
-  Certek já publica em `certek.com.br`. Nomes que aparecem apenas no ERP interno
-  não foram adicionados.
+- **Só clientes já públicos.** Os 41 logos originais vêm das tiras que a própria
+  Certek já publica em `certek.com.br`; os 6 acrescentados em 07/08/2026 (Bosch,
+  Yamaha Motor, Farmarin, ECM5, CMPC e Grupo São Joaquim) vieram de arquivos
+  enviados pela própria Certek, com autorização de citação confirmada na mesma
+  data. Nomes que aparecem apenas no ERP interno não foram adicionados.
 - **Marcas de terceiros** são exibidas apenas como registro de obras
   executadas, com nota explícita na seção de clientes.
 

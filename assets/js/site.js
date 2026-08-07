@@ -242,14 +242,23 @@
     var modalTitle = document.getElementById("work-modal-title");
     var modalText = document.getElementById("work-modal-text");
     var modalGallery = document.getElementById("work-modal-gallery");
+    var modalMeta = document.getElementById("work-modal-meta");
 
     var abreDetalhes = function (card) {
       var sector = card.querySelector(".work__sector");
       var titulo = card.querySelector("h3");
-      var texto = card.querySelector(".work__body p:not(.work__sector)");
+      var meta = card.querySelector(".work__meta");
+      var texto = card.querySelector(".work__body p:not(.work__sector):not(.work__meta)");
       modalSector.textContent = sector ? sector.textContent : "";
       modalTitle.textContent = titulo ? titulo.textContent : "";
       modalText.textContent = texto ? texto.textContent : "";
+
+      // Ficha técnica (cidade/UF · m²): nem todo card tem, e o parágrafo pode
+      // nem existir no HTML. Nos dois casos não sobra o texto da obra anterior.
+      if (modalMeta) {
+        modalMeta.textContent = meta ? meta.textContent.trim() : "";
+        modalMeta.hidden = !meta;
+      }
 
       modalGallery.textContent = "";
       (card.getAttribute("data-gallery") || "").split(",").forEach(function (caminho) {
